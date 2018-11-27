@@ -1,5 +1,7 @@
 # Hooks
 
+Hooks are a way to for us to contact your server when an even happen in lemlist. You can list, add or delete hooks.
+
 ## List All Hooks
 
 ```shell
