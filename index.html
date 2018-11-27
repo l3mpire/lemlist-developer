@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>lemlist Developer Documentation</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,12 +210,6 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -225,19 +219,91 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
+            <a href="#definitions" class="toc-h1 toc-link" data-title="Definitions">Definitions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#lead" class="toc-h2 toc-link" data-title="Lead">Lead</a>
+                  </li>
+                  <li>
+                    <a href="#unsubscribe" class="toc-h2 toc-link" data-title="Unsubscribe">Unsubscribe</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#team" class="toc-h1 toc-link" data-title="Team">Team</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#get-team-information" class="toc-h2 toc-link" data-title="Get Team Information">Get Team Information</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#campaigns" class="toc-h1 toc-link" data-title="Campaigns">Campaigns</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-all-campaigns" class="toc-h2 toc-link" data-title="List All Campaigns">List All Campaigns</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#export-statistics-of-a-campaign" class="toc-h2 toc-link" data-title="Export Statistics of a Campaign">Export Statistics of a Campaign</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#export-leads-of-a-campaign" class="toc-h2 toc-link" data-title="Export Leads of a Campaign">Export Leads of a Campaign</a>
+                  </li>
+                  <li>
+                    <a href="#add-a-lead-in-a-campaign" class="toc-h2 toc-link" data-title="Add a Lead in a Campaign">Add a Lead in a Campaign</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-lead-from-a-campaign" class="toc-h2 toc-link" data-title="Delete a Lead from a Campaign">Delete a Lead from a Campaign</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#leads" class="toc-h1 toc-link" data-title="Leads">Leads</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-a-specific-lead-by-email" class="toc-h2 toc-link" data-title="Get a Specific Lead by Email">Get a Specific Lead by Email</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#activities" class="toc-h1 toc-link" data-title="Activities">Activities</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-team-information" class="toc-h2 toc-link" data-title="Get Team Information">Get Team Information</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#unsubscribes" class="toc-h1 toc-link" data-title="Unsubscribes">Unsubscribes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-all-unsubscribes" class="toc-h2 toc-link" data-title="List All Unsubscribes">List All Unsubscribes</a>
+                  </li>
+                  <li>
+                    <a href="#export-the-list-of-unsubscribes" class="toc-h2 toc-link" data-title="Export the List of Unsubscribes">Export the List of Unsubscribes</a>
+                  </li>
+                  <li>
+                    <a href="#add-an-email-address-in-the-unsubscribes" class="toc-h2 toc-link" data-title="Add an Email Address in the Unsubscribes">Add an Email Address in the Unsubscribes</a>
+                  </li>
+                  <li>
+                    <a href="#delete-an-email-address-from-the-unsubscribes" class="toc-h2 toc-link" data-title="Delete an Email Address from the Unsubscribes">Delete an Email Address from the Unsubscribes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#hooks" class="toc-h1 toc-link" data-title="Hooks">Hooks</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-all-hooks" class="toc-h2 toc-link" data-title="List All Hooks">List All Hooks</a>
+                  </li>
+                  <li>
+                    <a href="#add-a-hook" class="toc-h2 toc-link" data-title="Add a Hook">Add a Hook</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-hook" class="toc-h2 toc-link" data-title="Delete a Hook">Delete a Hook</a>
                   </li>
               </ul>
           </li>
@@ -246,141 +312,94 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://lemlist.com'>lemlist Homepage</a></li>
+            <li><a href='http://help.lemlist.com'>lemlist Faq</a></li>
+            <li><a href='https://github.com/peernohell/lemlist-developer/blob/master/source/index.html.md'>Report an issue in this doc</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the lemlist Developer Documentation.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>lemlist is very customizable and open. You&#39;ll find on this page all the API and integration you can do with lemlist.</p>
+<h1 id='definitions'>Definitions</h1><h2 id='lead'>Lead</h2>
+<p>A lead, recipient or buddy-to-be is a person that you try to contact using lemlist. Lead is the developer term in the API and is the same thing than buddy-to-be in the app. You know... marketing...</p>
+<h2 id='unsubscribe'>Unsubscribe</h2>
+<p>Unsubscribe is the developer term for the graveyard. Where person decide that they don&#39;t want to receive email from you anymore.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/team <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code>YourApiKey</code> with your API key.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>lemlist uses API keys to allow access to the API. You can get your lemlist API key at our <a href="https://app.lemlist.com/integrations">integration page</a>.</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<p>You need to add the <code>Authorization</code> header using the <code>Basic</code> authentication type. <code>login:password</code> where the login is always empty and the password is the API key.</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Don't forget to add the semicolon (<code>:</code>) before your API key in curl command.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h1 id='team'>Team</h1><h2 id='get-team-information'>Get Team Information</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/team <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tea_aaqam5a3BkY8aje24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PiedPiper"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-30T12:19:42.829Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa13722b45b9c475cc686231b1af6583"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"freetrial"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<p>This endpoint retrieves information of your team.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.lemlist.com/api/team</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>No parameters.</p>
+<h1 id='campaigns'>Campaigns</h1><h2 id='list-all-campaigns'>List All Campaigns</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/campaigns <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaWL92T22Sei3Bz6v"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaXwBiebA8pWPKqpK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign2"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the list of all campaigns.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.lemlist.com/api/campaigns</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>No parameters.</p>
+<h2 id='export-statistics-of-a-campaign'>Export Statistics of a Campaign</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/campaigns/cam_123456/export <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns the CSV file for the campaign <code>cam_123456</code></p>
+</blockquote>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>This endpoint downloads a CSV file that contains all the statistics of a campaign.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code>GET https://app.lemlist.com/api/campaigns/:campaignId/export</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -389,37 +408,20 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>campaignId</td>
+<td>The ID of the campaign to retrieve.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h2 id='export-leads-of-a-campaign'>Export Leads of a Campaign</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/campaigns/cam_123456/export/list <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns the CSV file for the campaign <code>cam_123456</code></p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
+
+<p>This endpoint downloads a CSV file that contains all the leads of a campaign.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code>GET https://app.lemlist.com/api/campaigns/:campaignId/export</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -428,16 +430,387 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>campaignId</td>
+<td>The ID of the campaign to retrieve.</td>
+</tr>
+</tbody></table>
+<h2 id='add-a-lead-in-a-campaign'>Add a Lead in a Campaign</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://app.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
+  --data <span class="s1">'{"firstName":"Richard","lastName":"Hendricks"}'</span> <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aa7uvyxECcni5KXBM"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"leadUrl"</span><span class="p">:</span><span class="s2">"https://app.lemlist.com/api/leads/richard%40piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint adds a lead in a specific campaign. If the lead doesn&#39;t exist, it&#39;ll be created, then inserted to the campaign.</p>
+
+<p>You can just add the email without any body.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://app.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>The ID of the campaign to add the lead.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email address of the lead</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameters'>Body Parameters</h3>
+<p>Body is optional. If set, it must be a JSON object with any information you want to add to the lead.</p>
+
+<p>There&#39;s some optional predefined key:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>firstName</td>
+<td>First name of the lead.</td>
+</tr>
+<tr>
+<td>lastName</td>
+<td>Last name of the lead.</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>Company name of the lead.</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-lead-from-a-campaign'>Delete a Lead from a Campaign</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://app.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@piedpiper.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint delete a lead from a specific campaign.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE https://app.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>The ID of the campaign to add the lead.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email address of the lead</td>
+</tr>
+</tbody></table>
+<h1 id='leads'>Leads</h1><h2 id='get-a-specific-lead-by-email'>Get a Specific Lead by Email</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/leads/:email <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all the information of a specific lead using its email.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.lemlist.com/api/leads/:email</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>email address of the lead.</td>
+</tr>
+</tbody></table>
+<h1 id='activities'>Activities</h1><h2 id='get-team-information'>Get Team Information</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/activities <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"act_aaXiFy3Y7BNSuYwDr"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"isFirst"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emailsSent"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"teamId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tea_aaqam5a3BkY8zje24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T14:56:39.172Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sendUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sendUserEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sendUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Richard Hendricks"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"leadId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aafF6i3BjsDRDNAWN"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"leadFirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeanne"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"leadLastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"leadEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jeanne@doe.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaktcZg9z9xJKQgqK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"listId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lst_aa5tgpggEfYeJ9vbJ"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sequenceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seq_aaPoZgbALLQhcLmqz"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sequenceStep"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"emailTemplateId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"etp_aatuEkEztDPm32b23"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"emailTemplateName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales: The Honest One"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"emailId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eml_aaFHxT2ejiz7apYnn"</span><span class="w">
+</span><span class="p">},{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"act_aavmrPCCZGMSsCSNw"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"isFirst"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emailsSent"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"teamId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tea_aqam5a3BkY8zje24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T14:51:35.726Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sendUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sendUserEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sendUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Richard Hendricks"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"leadId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aafF6i3BjsDRDNAWN"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"leadFirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeanne"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"leadLastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"leadEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jeanne"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaktcZg9z9xJKQgqK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"listId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lst_aa5tgpggEfYeJ9vbJ"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sequenceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seq_aaPoZgbALLQhcLmqz"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sequenceStep"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"emailTemplateId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"etp_aak9yNgefLCCB7ghA"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"emailTemplateName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I Just Call"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"emailId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eml_aabhRvzfe9sFErQ2b"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the last 100 activities.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.lemlist.com/api/activities</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>(Optional) The type of activity you want to retrieve. Can be <code>emailsSent</code>, <code>emailsOpened</code>, <code>emailsClicked</code>, <code>emailsReplied</code>, <code>emailsBounced</code>, <code>emailsSendFailed</code>, <code>emailsUnsubscribed</code>.</td>
+</tr>
+<tr>
+<td>campaignId</td>
+<td>(Optional) Retrieve activities of this <code>campaignId</code>.</td>
+</tr>
+<tr>
+<td>isFirst</td>
+<td>(Optional) Only retrieve the first time this activity happened.</td>
+</tr>
+</tbody></table>
+<h1 id='unsubscribes'>Unsubscribes</h1><h2 id='list-all-unsubscribes'>List All Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/unsubscribes <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lead_123456"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.com"</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lead_123457"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b@b.com"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the list of all people who are unsubscribed.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.lemlist.com/api/unsubscribes</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offset</td>
+<td>(Optional) Offset from the start. For pagination.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>(Optional) Number of email to retrieve. 100 per default.</td>
+</tr>
+</tbody></table>
+<h2 id='export-the-list-of-unsubscribes'>Export the List of Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/unsubscribes/export <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns the CSV file with all unsubscribed email addresses.</p>
+</blockquote>
+
+<p>This endpoint downloads a CSV file that contains all the unsubscribed email addresses.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.lemlist.com/api/unsubscribes/export</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<p>No parameters.</p>
+<h2 id='add-an-email-address-in-the-unsubscribes'>Add an Email Address in the Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://app.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aaJgm566c9tyzTBeu"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint adds a lead in the unsubscribed list.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://app.lemlist.com/api/unsubscribes/:email</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>email address to unsubscribe.</td>
+</tr>
+</tbody></table>
+<h2 id='delete-an-email-address-from-the-unsubscribes'>Delete an Email Address from the Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://app.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aaJgm566c9tyzTBeu"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint deletes a lead in the unsubscribed list.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>DELETE https://app.lemlist.com/api/unsubscribes/:email</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>email address of the lead</td>
+</tr>
+</tbody></table>
+<h1 id='hooks'>Hooks</h1>
+<p>Hooks are a way to for us to contact your server when an even happen in lemlist. You can list, add or delete hooks.</p>
+<h2 id='list-all-hooks'>List All Hooks</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/hooks <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hoo_aadabFv7dRoP2L8GJ"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://youserver.com/lemlist-hook"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T12:19:26.608Z"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the list of all hooks.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.lemlist.com/api/hooks</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>No parameters.</p>
+<h2 id='add-a-hook'>Add a Hook</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://app.lemlist.com/api/hooks <span class="se">\</span>
+  --data <span class="s1">'{"targetUrl":"https://youserver.com/lemlist-hook"}'</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hoo_aadabFv7dRoP2L8GJ"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://youserver.com/lemlist-hook"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T12:19:26.608Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint adds a hook in our system. Each time an event happen, we&#39;ll call <code>targetUrl</code>.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://app.lemlist.com/api/hooks</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<p>Body is optional. If set, It must be a JSON object with one of those parameters.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>(Optional) We&#39;ll call this hook only if the event is of the type <code>type</code>. <code>type</code> can be <code>emailsSent</code>, <code>emailsOpened</code>, <code>emailsClicked</code>, <code>emailsReplied</code>, <code>emailsBounced</code>, <code>emailsSendFailed</code>, <code>emailsUnsubscribed</code>.</td>
+</tr>
+<tr>
+<td>campaignId</td>
+<td>(Optional) We&#39;ll call this hook only for this <code>campaignId</code>.</td>
+</tr>
+<tr>
+<td>isFirst</td>
+<td>(Optional) We&#39;ll call this hook only the first time this activity happened.</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-hook'>Delete a Hook</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://app.lemlist.com/api/hooks/hoo_123456 <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hoo_aadabFv7dRoP2L8GJ"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://youserver.com/lemlist-hook"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T12:19:26.608Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint delete a hook.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>DELETE https://app.lemlist.com/api/hooks/:_id</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>_id</td>
+<td>The ID of the hook that we have to remove.</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<p>The lemlist API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -455,15 +828,15 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- The id requested is hidden for administrators only.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified id could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access a id with an invalid method.</td>
 </tr>
 <tr>
 <td>406</td>
@@ -471,7 +844,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>Gone -- The id requested has been removed from our servers.</td>
 </tr>
 <tr>
 <td>418</td>
@@ -479,7 +852,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests -- You&#39;re requesting too many ids! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
@@ -493,12 +866,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-          </div>
       </div>
     </div>
   </body>
