@@ -78,6 +78,7 @@ campaignId | The ID of the campaign to retrieve.
 
 ```shell
 curl -X POST https://app.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com \
+  -H "Content-Type: application/json" \
   --data '{"firstName":"Richard","lastName":"Hendricks"}' \
   --user ":YourApiKey"
 ```
