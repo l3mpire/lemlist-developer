@@ -435,6 +435,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </tr>
 </tbody></table>
 <h2 id='add-a-lead-in-a-campaign'>Add a Lead in a Campaign</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://app.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   --data <span class="s1">'{"firstName":"Richard","lastName":"Hendricks"}'</span> <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
