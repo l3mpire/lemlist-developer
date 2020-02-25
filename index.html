@@ -332,12 +332,14 @@
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/team <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/team <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
 <p>Make sure to replace <code>YourApiKey</code> with your API key.</p>
 </blockquote>
+
+<p>All API routes are using the dedicated sub domain <code>api.lemlist.com</code>.</p>
 
 <p>lemlist uses API keys to allow access to the API. You can get your lemlist API key at our <a href="https://app.lemlist.com/integrations">integration page</a>.</p>
 
@@ -346,7 +348,7 @@
 <aside class="notice">
 Don't forget to add the semicolon (<code>:</code>) before your API key in curl command.
 </aside>
-<h1 id='team'>Team</h1><h2 id='get-team-information'>Get Team Information</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/team <span class="se">\</span>
+<h1 id='team'>Team</h1><h2 id='get-team-information'>Get Team Information</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/team <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -368,10 +370,10 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </span></code></pre>
 <p>This endpoint retrieves information of your team.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://app.lemlist.com/api/team</code></p>
+<p><code>GET https://api.lemlist.com/api/team</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <p>No parameters.</p>
-<h1 id='campaigns'>Campaigns</h1><h2 id='list-all-campaigns'>List All Campaigns</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/campaigns <span class="se">\</span>
+<h1 id='campaigns'>Campaigns</h1><h2 id='list-all-campaigns'>List All Campaigns</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -387,10 +389,10 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </span></code></pre>
 <p>This endpoint retrieves the list of all campaigns.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://app.lemlist.com/api/campaigns</code></p>
+<p><code>GET https://api.lemlist.com/api/campaigns</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <p>No parameters.</p>
-<h2 id='export-statistics-of-a-campaign'>Export Statistics of a Campaign</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/campaigns/cam_123456/export <span class="se">\</span>
+<h2 id='export-statistics-of-a-campaign'>Export Statistics of a Campaign</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -399,7 +401,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 
 <p>This endpoint downloads a CSV file that contains all the statistics of a campaign.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://app.lemlist.com/api/campaigns/:campaignId/export</code></p>
+<p><code>GET https://api.lemlist.com/api/campaigns/:campaignId/export</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -412,7 +414,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>The ID of the campaign to retrieve.</td>
 </tr>
 </tbody></table>
-<h2 id='export-leads-of-a-campaign'>Export Leads of a Campaign</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/campaigns/cam_123456/export/list <span class="se">\</span>
+<h2 id='export-leads-of-a-campaign'>Export Leads of a Campaign</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export/list <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -421,7 +423,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 
 <p>This endpoint downloads a CSV file that contains all the leads of a campaign.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://app.lemlist.com/api/campaigns/:campaignId/export</code></p>
+<p><code>GET https://api.lemlist.com/api/campaigns/:campaignId/export</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -434,7 +436,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>The ID of the campaign to retrieve.</td>
 </tr>
 </tbody></table>
-<h2 id='add-a-lead-in-a-campaign'>Add a Lead in a Campaign</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://app.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
+<h2 id='add-a-lead-in-a-campaign'>Add a Lead in a Campaign</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   --data <span class="s1">'{"firstName":"Richard","lastName":"Hendricks"}'</span> <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
@@ -445,7 +447,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aa7uvyxECcni5KXBM"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"leadUrl"</span><span class="p">:</span><span class="s2">"https://app.lemlist.com/api/leads/richard%40piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"leadUrl"</span><span class="p">:</span><span class="s2">"https://api.lemlist.com/api/leads/richard%40piedpiper.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
@@ -456,7 +458,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 
 <p>You can just add the email without any body.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://app.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
+<p><code>POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -497,7 +499,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>Company name of the lead.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-lead-from-a-campaign'>Delete a Lead from a Campaign</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://app.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
+<h2 id='delete-a-lead-from-a-campaign'>Delete a Lead from a Campaign</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -510,7 +512,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </span></code></pre>
 <p>This endpoint delete a lead from a specific campaign.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>DELETE https://app.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
+<p><code>DELETE https://api.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -527,7 +529,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>email address of the lead</td>
 </tr>
 </tbody></table>
-<h1 id='leads'>Leads</h1><h2 id='get-a-specific-lead-by-email'>Get a Specific Lead by Email</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/leads/:email <span class="se">\</span>
+<h1 id='leads'>Leads</h1><h2 id='get-a-specific-lead-by-email'>Get a Specific Lead by Email</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/leads/:email <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -542,7 +544,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </span></code></pre>
 <p>This endpoint retrieves all the information of a specific lead using its email.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://app.lemlist.com/api/leads/:email</code></p>
+<p><code>GET https://api.lemlist.com/api/leads/:email</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -555,7 +557,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>email address of the lead.</td>
 </tr>
 </tbody></table>
-<h1 id='activities'>Activities</h1><h2 id='get-team-information'>Get Team Information</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/activities <span class="se">\</span>
+<h1 id='activities'>Activities</h1><h2 id='get-team-information'>Get Team Information</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/activities <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -607,7 +609,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </span></code></pre>
 <p>This endpoint retrieves the last 100 activities.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://app.lemlist.com/api/activities</code></p>
+<p><code>GET https://api.lemlist.com/api/activities</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -628,7 +630,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>(Optional) Only retrieve the first time this activity happened.</td>
 </tr>
 </tbody></table>
-<h1 id='unsubscribes'>Unsubscribes</h1><h2 id='list-all-unsubscribes'>List All Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/unsubscribes <span class="se">\</span>
+<h1 id='unsubscribes'>Unsubscribes</h1><h2 id='list-all-unsubscribes'>List All Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/unsubscribes <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -644,7 +646,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </span></code></pre>
 <p>This endpoint retrieves the list of all people who are unsubscribed.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://app.lemlist.com/api/unsubscribes</code></p>
+<p><code>GET https://api.lemlist.com/api/unsubscribes</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -661,7 +663,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>(Optional) Number of email to retrieve. 100 per default.</td>
 </tr>
 </tbody></table>
-<h2 id='export-the-list-of-unsubscribes'>Export the List of Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/unsubscribes/export <span class="se">\</span>
+<h2 id='export-the-list-of-unsubscribes'>Export the List of Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/unsubscribes/export <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -670,10 +672,10 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 
 <p>This endpoint downloads a CSV file that contains all the unsubscribed email addresses.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://app.lemlist.com/api/unsubscribes/export</code></p>
+<p><code>GET https://api.lemlist.com/api/unsubscribes/export</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <p>No parameters.</p>
-<h2 id='add-an-email-address-in-the-unsubscribes'>Add an Email Address in the Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://app.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
+<h2 id='add-an-email-address-in-the-unsubscribes'>Add an Email Address in the Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -686,7 +688,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </span></code></pre>
 <p>This endpoint adds a lead in the unsubscribed list.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST https://app.lemlist.com/api/unsubscribes/:email</code></p>
+<p><code>POST https://api.lemlist.com/api/unsubscribes/:email</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -699,7 +701,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>email address to unsubscribe.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-an-email-address-from-the-unsubscribes'>Delete an Email Address from the Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://app.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
+<h2 id='delete-an-email-address-from-the-unsubscribes'>Delete an Email Address from the Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://api.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -712,7 +714,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </span></code></pre>
 <p>This endpoint deletes a lead in the unsubscribed list.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>DELETE https://app.lemlist.com/api/unsubscribes/:email</code></p>
+<p><code>DELETE https://api.lemlist.com/api/unsubscribes/:email</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -727,7 +729,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </tbody></table>
 <h1 id='hooks'>Hooks</h1>
 <p>Hooks are a way to for us to contact your server when an even happen in lemlist. You can list, add or delete hooks.</p>
-<h2 id='list-all-hooks'>List All Hooks</h2><pre class="highlight shell tab-shell"><code>curl https://app.lemlist.com/api/hooks <span class="se">\</span>
+<h2 id='list-all-hooks'>List All Hooks</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/hooks <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -741,10 +743,10 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </span></code></pre>
 <p>This endpoint retrieves the list of all hooks.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://app.lemlist.com/api/hooks</code></p>
+<p><code>GET https://api.lemlist.com/api/hooks</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <p>No parameters.</p>
-<h2 id='add-a-hook'>Add a Hook</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://app.lemlist.com/api/hooks <span class="se">\</span>
+<h2 id='add-a-hook'>Add a Hook</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.lemlist.com/api/hooks <span class="se">\</span>
   --data <span class="s1">'{"targetUrl":"https://youserver.com/lemlist-hook"}'</span> <span class="se">\</span>
   --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
@@ -760,7 +762,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </span></code></pre>
 <p>This endpoint adds a hook in our system. Each time an event happen, we&#39;ll call <code>targetUrl</code>.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST https://app.lemlist.com/api/hooks</code></p>
+<p><code>POST https://api.lemlist.com/api/hooks</code></p>
 <h3 id='body-parameters'>Body Parameters</h3>
 <p>Body is optional. If set, It must be a JSON object with one of those parameters.</p>
 
@@ -783,7 +785,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>(Optional) We&#39;ll call this hook only the first time this activity happened.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-hook'>Delete a Hook</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://app.lemlist.com/api/hooks/hoo_123456 <span class="se">\</span>
+<h2 id='delete-a-hook'>Delete a Hook</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://api.lemlist.com/api/hooks/hoo_123456 <span class="se">\</span>
   --user <span class="s2">":YourApiKey"</span>
 </code></pre>
 <blockquote>
@@ -797,7 +799,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </span></code></pre>
 <p>This endpoint delete a hook.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE https://app.lemlist.com/api/hooks/:_id</code></p>
+<p><code>DELETE https://api.lemlist.com/api/hooks/:_id</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
