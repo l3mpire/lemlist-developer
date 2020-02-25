@@ -3,7 +3,7 @@
 ## Get Team Information
 
 ```shell
-curl https://app.lemlist.com/api/team \
+curl https://api.lemlist.com/api/team \
   --user ":YourApiKey"
 ```
 
@@ -29,7 +29,7 @@ This endpoint retrieves information of your team.
 
 ### HTTP Request
 
-`GET https://app.lemlist.com/api/team`
+`GET https://api.lemlist.com/api/team`
 
 ### Query Parameters
 

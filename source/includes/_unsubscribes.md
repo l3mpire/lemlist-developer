@@ -3,7 +3,7 @@
 ## List All Unsubscribes
 
 ```shell
-curl https://app.lemlist.com/api/unsubscribes \
+curl https://api.lemlist.com/api/unsubscribes \
   --user ":YourApiKey"
 ```
 
@@ -23,7 +23,7 @@ This endpoint retrieves the list of all people who are unsubscribed.
 
 ### HTTP Request
 
-`GET https://app.lemlist.com/api/unsubscribes`
+`GET https://api.lemlist.com/api/unsubscribes`
 
 ### Query Parameters
 
@@ -36,7 +36,7 @@ limit | (Optional) Number of email to retrieve. 100 per default.
 ## Export the List of Unsubscribes
 
 ```shell
-curl https://app.lemlist.com/api/unsubscribes/export \
+curl https://api.lemlist.com/api/unsubscribes/export \
   --user ":YourApiKey"
 ```
 
@@ -46,7 +46,7 @@ This endpoint downloads a CSV file that contains all the unsubscribed email addr
 
 ### HTTP Request
 
-`GET https://app.lemlist.com/api/unsubscribes/export`
+`GET https://api.lemlist.com/api/unsubscribes/export`
 
 ### URL Parameters
 
@@ -56,7 +56,7 @@ No parameters.
 ## Add an Email Address in the Unsubscribes
 
 ```shell
-curl -X POST https://app.lemlist.com/api/unsubscribes/a@a.com \
+curl -X POST https://api.lemlist.com/api/unsubscribes/a@a.com \
   --user ":YourApiKey"
 ```
 
@@ -73,7 +73,7 @@ This endpoint adds a lead in the unsubscribed list.
 
 ### HTTP Request
 
-`POST https://app.lemlist.com/api/unsubscribes/:email`
+`POST https://api.lemlist.com/api/unsubscribes/:email`
 
 ### URL Parameters
 
@@ -85,7 +85,7 @@ email | email address to unsubscribe.
 ## Delete an Email Address from the Unsubscribes
 
 ```shell
-curl -X DELETE https://app.lemlist.com/api/unsubscribes/a@a.com \
+curl -X DELETE https://api.lemlist.com/api/unsubscribes/a@a.com \
   --user ":YourApiKey"
 ```
 
@@ -102,7 +102,7 @@ This endpoint deletes a lead in the unsubscribed list.
 
 ### HTTP Request
 
-`DELETE https://app.lemlist.com/api/unsubscribes/:email`
+`DELETE https://api.lemlist.com/api/unsubscribes/:email`
 
 ### URL Parameters
 

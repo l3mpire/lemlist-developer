@@ -3,7 +3,7 @@
 ## Get Team Information
 
 ```shell
-curl https://app.lemlist.com/api/activities \
+curl https://api.lemlist.com/api/activities \
   --user ":YourApiKey"
 ```
 
@@ -59,7 +59,7 @@ This endpoint retrieves the last 100 activities.
 
 ### HTTP Request
 
-`GET https://app.lemlist.com/api/activities`
+`GET https://api.lemlist.com/api/activities`
 
 ### Query Parameters
 

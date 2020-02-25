@@ -3,7 +3,7 @@
 ## List All Campaigns
 
 ```shell
-curl https://app.lemlist.com/api/campaigns \
+curl https://api.lemlist.com/api/campaigns \
   --user ":YourApiKey"
 ```
 
@@ -23,7 +23,7 @@ This endpoint retrieves the list of all campaigns.
 
 ### HTTP Request
 
-`GET https://app.lemlist.com/api/campaigns`
+`GET https://api.lemlist.com/api/campaigns`
 
 ### Query Parameters
 
@@ -33,7 +33,7 @@ No parameters.
 ## Export Statistics of a Campaign
 
 ```shell
-curl https://app.lemlist.com/api/campaigns/cam_123456/export \
+curl https://api.lemlist.com/api/campaigns/cam_123456/export \
   --user ":YourApiKey"
 ```
 
@@ -43,7 +43,7 @@ This endpoint downloads a CSV file that contains all the statistics of a campaig
 
 ### HTTP Request
 
-`GET https://app.lemlist.com/api/campaigns/:campaignId/export`
+`GET https://api.lemlist.com/api/campaigns/:campaignId/export`
 
 ### URL Parameters
 
@@ -55,7 +55,7 @@ campaignId | The ID of the campaign to retrieve.
 ## Export Leads of a Campaign
 
 ```shell
-curl https://app.lemlist.com/api/campaigns/cam_123456/export/list \
+curl https://api.lemlist.com/api/campaigns/cam_123456/export/list \
   --user ":YourApiKey"
 ```
 
@@ -65,7 +65,7 @@ This endpoint downloads a CSV file that contains all the leads of a campaign.
 
 ### HTTP Request
 
-`GET https://app.lemlist.com/api/campaigns/:campaignId/export`
+`GET https://api.lemlist.com/api/campaigns/:campaignId/export`
 
 ### URL Parameters
 
@@ -77,7 +77,7 @@ campaignId | The ID of the campaign to retrieve.
 ## Add a Lead in a Campaign
 
 ```shell
-curl -X POST https://app.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com \
+curl -X POST https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com \
   -H "Content-Type: application/json" \
   --data '{"firstName":"Richard","lastName":"Hendricks"}' \
   --user ":YourApiKey"
@@ -89,7 +89,7 @@ curl -X POST https://app.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/r
 {
   "campaignId": "cam_aa7uvyxECcni5KXBM",
   "campaignName": "Campaign1",
-  "leadUrl":"https://app.lemlist.com/api/leads/richard%40piedpiper.com",
+  "leadUrl":"https://api.lemlist.com/api/leads/richard%40piedpiper.com",
   "_id":"lea_aaNfSAHJoa4gj86Px",
   "email":"richard@piedpiper.com",
   "firstName":"Richard",
@@ -103,7 +103,7 @@ You can just add the email without any body.
 
 ### HTTP Request
 
-`POST https://app.lemlist.com/api/campaigns/:campaignId/leads/:email`
+`POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email`
 
 ### URL Parameters
 
@@ -127,7 +127,7 @@ companyName | Company name of the lead.
 ## Delete a Lead from a Campaign
 
 ```shell
-curl -X DELETE https://app.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com \
+curl -X DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com \
   --user ":YourApiKey"
 ```
 
@@ -144,7 +144,7 @@ This endpoint delete a lead from a specific campaign.
 
 ### HTTP Request
 
-`DELETE https://app.lemlist.com/api/campaigns/:campaignId/leads/:email`
+`DELETE https://api.lemlist.com/api/campaigns/:campaignId/leads/:email`
 
 ### URL Parameters
 

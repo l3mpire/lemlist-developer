@@ -5,7 +5,7 @@ Hooks are a way to for us to contact your server when an even happen in lemlist.
 ## List All Hooks
 
 ```shell
-curl https://app.lemlist.com/api/hooks \
+curl https://api.lemlist.com/api/hooks \
   --user ":YourApiKey"
 ```
 
@@ -23,7 +23,7 @@ This endpoint retrieves the list of all hooks.
 
 ### HTTP Request
 
-`GET https://app.lemlist.com/api/hooks`
+`GET https://api.lemlist.com/api/hooks`
 
 ### Query Parameters
 
@@ -33,7 +33,7 @@ No parameters.
 ## Add a Hook
 
 ```shell
-curl -X POST https://app.lemlist.com/api/hooks \
+curl -X POST https://api.lemlist.com/api/hooks \
   --data '{"targetUrl":"https://youserver.com/lemlist-hook"}' \
   --header "Content-Type: application/json" \
   --user ":YourApiKey"
@@ -53,7 +53,7 @@ This endpoint adds a hook in our system. Each time an event happen, we'll call `
 
 ### HTTP Request
 
-`POST https://app.lemlist.com/api/hooks`
+`POST https://api.lemlist.com/api/hooks`
 
 ### Body Parameters
 
@@ -69,7 +69,7 @@ isFirst | (Optional) We'll call this hook only the first time this activity happ
 ## Delete a Hook
 
 ```shell
-curl -X DELETE https://app.lemlist.com/api/hooks/hoo_123456 \
+curl -X DELETE https://api.lemlist.com/api/hooks/hoo_123456 \
   --user ":YourApiKey"
 ```
 
@@ -87,7 +87,7 @@ This endpoint delete a hook.
 
 ### HTTP Request
 
-`DELETE https://app.lemlist.com/api/hooks/:_id`
+`DELETE https://api.lemlist.com/api/hooks/:_id`
 
 ### URL Parameters
 

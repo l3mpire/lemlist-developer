@@ -3,7 +3,7 @@
 ## Get a Specific Lead by Email
 
 ```shell
-curl https://app.lemlist.com/api/leads/:email \
+curl https://api.lemlist.com/api/leads/:email \
   --user ":YourApiKey"
 ```
 
@@ -22,7 +22,7 @@ This endpoint retrieves all the information of a specific lead using its email.
 
 ### HTTP Request
 
-`GET https://app.lemlist.com/api/leads/:email`
+`GET https://api.lemlist.com/api/leads/:email`
 
 ### Query Parameters
 
