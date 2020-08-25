@@ -475,6 +475,35 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>email address of the lead</td>
 </tr>
 </tbody></table>
+<h3 id='query-parameters-2'>Query Parameters</h3><pre class="highlight shell tab-shell"><code>curl POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  --data <span class="s1">'{"firstName":"Richard","lastName":"Hendricks"}'</span> <span class="se">\</span>
+  --user <span class="s2">":YourApiKey"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aa7uvyxECcni5KXBM"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"leadUrl"</span><span class="p">:</span><span class="s2">"https://api.lemlist.com/api/leads/richard%40piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>deduplicate=true</td>
+<td>search email address in another campaign, will not insert the lead if email address already inserted</td>
+</tr>
+</tbody></table>
 <h3 id='body-parameters'>Body Parameters</h3>
 <p>Body is optional. If set, it must be a JSON object with any information you want to add to the lead.</p>
 
