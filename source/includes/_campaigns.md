@@ -112,6 +112,35 @@ Parameter | Description
 campaignId | The ID of the campaign to add the lead.
 email | email address of the lead
 
+
+### Query Parameters
+
+```shell
+curl POST "https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true" \
+  -H "Content-Type: application/json" \
+  --data '{"firstName":"Richard","lastName":"Hendricks"}' \
+  --user ":YourApiKey"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "campaignId": "cam_aa7uvyxECcni5KXBM",
+  "campaignName": "Campaign1",
+  "leadUrl":"https://api.lemlist.com/api/leads/richard%40piedpiper.com",
+  "_id":"lea_aaNfSAHJoa4gj86Px",
+  "email":"richard@piedpiper.com",
+  "firstName":"Richard",
+  "lastName":"Hendricks"
+}
+```
+
+Parameter | Description
+--------- | -----------
+deduplicate=true | search email address in another campaign, will not insert the lead if email address already inserted  
+
+
 ### Body Parameters
 
 Body is optional. If set, it must be a JSON object with any information you want to add to the lead.
