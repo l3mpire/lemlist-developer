@@ -27,7 +27,7 @@ lemlist is very customizable and open. You'll find on this page all the API and 
 # Rate Limit
 
 lemlist's API rate limits requests in order to prevent abuse and overload of our services.  
-Rate limits are applied on all routes and per-account performing the request.  
+Rate limits are applied on all routes and per api key performing the request.  
 The rate limits are **20** requests per **2** seconds.  
 The response provide any information you may need about it:
 
