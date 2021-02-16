@@ -1,29 +1,50 @@
 #!/usr/bin/env bash
 set -o errexit #abort if any command fails
+
 me=$(basename "$0")
 
 help_message="\
-Usage: $me [-c FILE] [<options>]
-Deploy generated files to a git branch.
+Usage: $me [<options>] <command> [<command-options>]
+Run commands related to the slate process.
 
-Options:
+Commands:
 
-  -h, --help               Show this help information.
-  -v, --verbose            Increase verbosity. Useful for debugging.
-  -e, --allow-empty        Allow deployment of an empty directory.
-  -m, --message MESSAGE    Specify the message used when committing on the
-                           deploy branch.
-  -n, --no-hash            Don't append the source commit's hash to the deploy
-                           commit's message.
+  serve                   Run the middleman server process, useful for
+                          development.
+  build                   Run the build process.
+  deploy                  Will build and deploy files to branch. Use
+                          --no-build to only deploy.
+
+Global Options:
+
+  -h, --help              Show this help information.
+  -v, --verbose           Increase verbosity. Useful for debugging.
+
+Deploy options:
+  -e, --allow-empty       Allow deployment of an empty directory.
+  -m, --message MESSAGE   Specify the message used when committing on the
+                          deploy branch.
+  -n, --no-hash           Don't append the source commit's hash to the deploy
+                          commit's message.
+  --no-build              Do not build the source files.
 "
 
-bundle exec middleman build --clean
+
+run_serve() {
+  exec bundle exec middleman serve --watcher-force-polling
+}
+
+run_build() {
+  bundle exec middleman build --clean
+}
 
 parse_args() {
   # Set args from a local environment file.
   if [ -e ".env" ]; then
     source .env
   fi
+
+  command=
 
   # Parse arg flags
   # If something is exposed as an environment variable, set/overwrite it
@@ -44,19 +65,23 @@ parse_args() {
     elif [[ $1 = "-n" || $1 = "--no-hash" ]]; then
       GIT_DEPLOY_APPEND_HASH=false
       shift
-    elif [[ $1 = "--source-only" ]]; then
-      source_only=true
+    elif [[ $1 = "--no-build" ]]; then
+      no_build=true
       shift
-    elif [[ $1 = "--push-only" ]]; then
-      push_only=true
+    elif [[ $1 = "serve" || $1 = "build" || $1 = "deploy" ]]; then
+      if [ ! -z "${command}" ]; then
+        >&2 echo "You can only specify one command."
+        exit 1
+      fi
+      command=$1
       shift
-    else
+    elif [ -z $1 ]; then
       break
     fi
   done
 
-  if [ ${source_only} ] && [ ${push_only} ]; then
-    >&2 echo "You can only specify one of --source-only or --push-only"
+  if [ -z "${command}" ]; then
+    >&2 echo "Command not specified."
     exit 1
   fi
 
@@ -106,7 +131,7 @@ main() {
     return 1
   fi
 
-  # must use short form of flag in ls for compatibility with OS X and BSD
+  # must use short form of flag in ls for compatibility with macOS and BSD
   if [[ -z `ls -A "$deploy_directory" 2> /dev/null` && -z $allow_empty ]]; then
     echo "Deploy directory '$deploy_directory' is empty. Aborting. If you're sure you want to deploy an empty tree, use the --allow-empty / -e flag." >&2
     return 1
@@ -211,11 +236,13 @@ sanitize() {
 
 parse_args "$@"
 
-if [[ ${source_only} ]]; then
+if [ "${command}" = "serve" ]; then
+  run_serve
+elif [[ "${command}" = "build" ]]; then
   run_build
-elif [[ ${push_only} ]]; then
-  main "$@"
-else
-  run_build
+elif [[ ${command} = "deploy" ]]; then
+  if [[ ${no_build} != true ]]; then
+    run_build
+  fi
   main "$@"
 fi

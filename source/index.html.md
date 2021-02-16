@@ -16,6 +16,8 @@ includes:
   - errors
 
 search: true
+
+code_clipboard: true
 ---
 
 # Introduction
@@ -55,7 +57,15 @@ X-RateLimit-Reset | The date when the rate limit will reset
 
 A lead, recipient or buddy-to-be is a person that you try to contact using lemlist. Lead is the developer term in the API and is the same thing than buddy-to-be in the app. You know... marketing...
 
+<<<<<<< HEAD
 ## Unsubscribe
+=======
+```shell
+curl "http://example.com/api/kittens/2" \
+  -X DELETE \
+  -H "Authorization: meowmeowmeow"
+```
+>>>>>>> e3a3a3a8b4d66e4168525bf61a918e3e3964563c
 
 Unsubscribe is the developer term for the graveyard. Where person decide that they don't want to receive email from you anymore.
 
