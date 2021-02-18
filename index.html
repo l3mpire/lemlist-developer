@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>lemlist Developer Documentation</title>
 
-    <style>
+    <style media="screen">
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .gh {
@@ -42,7 +42,7 @@
 .highlight .cs {
   color: #75715e;
 }
-.highlight .c, .highlight .cd {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
   color: #75715e;
 }
 .highlight .err {
@@ -126,7 +126,7 @@
 .highlight .s1 {
   color: #e6db74;
 }
-.highlight .s {
+.highlight .s, .highlight .sa, .highlight .dl {
   color: #e6db74;
 }
 .highlight .na {
@@ -141,16 +141,13 @@
 .highlight .ne {
   color: #a6e22e;
 }
-.highlight .nf {
+.highlight .nf, .highlight .fm {
   color: #a6e22e;
 }
 .highlight .vc {
   color: #ffffff;
 }
 .highlight .nn {
-  color: #ffffff;
-}
-.highlight .nl {
   color: #ffffff;
 }
 .highlight .ni {
@@ -165,7 +162,7 @@
 .highlight .vi {
   color: #ffffff;
 }
-.highlight .nv {
+.highlight .nv, .highlight .vm {
   color: #ffffff;
 }
 .highlight .w {
@@ -176,6 +173,9 @@
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
 }
 .highlight .ow {
   color: #f92672;
@@ -196,20 +196,110 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c7c389dd.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-e033bdd3.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
   </head>
 
   <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo-b3aec0f1.png" class="logo" alt="" />
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -217,6 +307,9 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#rate-limit" class="toc-h1 toc-link" data-title="Rate Limit">Rate Limit</a>
           </li>
           <li>
             <a href="#definitions" class="toc-h1 toc-link" data-title="Definitions">Definitions</a>
@@ -314,7 +407,7 @@
         <ul class="toc-footer">
             <li><a href='https://lemlist.com'>lemlist Homepage</a></li>
             <li><a href='http://help.lemlist.com'>lemlist Faq</a></li>
-            <li><a href='https://github.com/peernohell/lemlist-developer/blob/master/source/index.html.md'>Report an issue in this doc</a></li>
+            <li><a href='https://github.com/l3mpire/lemlist-developer/blob/master/source/index.html.md'>Report an issue in this doc</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -324,6 +417,45 @@
 <p>Welcome to the lemlist Developer Documentation.</p>
 
 <p>lemlist is very customizable and open. You&#39;ll find on this page all the API and integration you can do with lemlist.</p>
+<h1 id='rate-limit'>Rate Limit</h1>
+<p>lemlist&#39;s API rate limits requests in order to prevent abuse and overload of our services.<br>
+Rate limits are applied on all routes and per api key performing the request.<br>
+The rate limits are <strong>20</strong> requests per <strong>2</strong> seconds.<br>
+The response provide any information you may need about it:</p>
+
+<blockquote>
+<p>Example of values for the rate limit headers</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"Retry-After"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"X-RateLimit-Limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"X-RateLimit-Remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Retry-After"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue Feb 16 2021 09:02:42 GMT+0100 (Central European Standard Time)"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Retry-After</td>
+<td>The number of second in which you can retry</td>
+</tr>
+<tr>
+<td>X-RateLimit-Limit</td>
+<td>The maximum requests in that time</td>
+</tr>
+<tr>
+<td>X-RateLimit-Remaining</td>
+<td>The number of remaining requests you can make</td>
+</tr>
+<tr>
+<td>X-RateLimit-Reset</td>
+<td>The date when the rate limit will reset</td>
+</tr>
+</tbody></table>
 <h1 id='definitions'>Definitions</h1><h2 id='lead'>Lead</h2>
 <p>A lead, recipient or buddy-to-be is a person that you try to contact using lemlist. Lead is the developer term in the API and is the same thing than buddy-to-be in the app. You know... marketing...</p>
 <h2 id='unsubscribe'>Unsubscribe</h2>
@@ -332,9 +464,9 @@
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/team <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/team <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>Make sure to replace <code>YourApiKey</code> with your API key.</p>
 </blockquote>
@@ -348,53 +480,53 @@
 <aside class="notice">
 Don't forget to add the semicolon (<code>:</code>) before your API key in curl command.
 </aside>
-<h1 id='team'>Team</h1><h2 id='get-team-information'>Get Team Information</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/team <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h1 id='team'>Team</h1><h2 id='get-team-information'>Get Team Information</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/team <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tea_aaqam5a3BkY8aje24"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PiedPiper"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"userIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">],</span><span class="w">
-  </span><span class="s2">"createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-30T12:19:42.829Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa13722b45b9c475cc686231b1af6583"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"freetrial"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tea_aaqam5a3BkY8aje24"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PiedPiper"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"userIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-30T12:19:42.829Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa13722b45b9c475cc686231b1af6583"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"freetrial"</span><span class="w">
   </span><span class="p">},</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves information of your team.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.lemlist.com/api/team</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <p>No parameters.</p>
-<h1 id='campaigns'>Campaigns</h1><h2 id='list-all-campaigns'>List All Campaigns</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h1 id='campaigns'>Campaigns</h1><h2 id='list-all-campaigns'>List All Campaigns</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaWL92T22Sei3Bz6v"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaWL92T22Sei3Bz6v"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="w">
 </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaXwBiebA8pWPKqpK"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign2"</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaXwBiebA8pWPKqpK"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign2"</span><span class="w">
 </span><span class="p">}]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves the list of all campaigns.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.lemlist.com/api/campaigns</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <p>No parameters.</p>
-<h2 id='export-statistics-of-a-campaign'>Export Statistics of a Campaign</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h2 id='export-statistics-of-a-campaign'>Export Statistics of a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns the CSV file for the campaign <code>cam_123456</code></p>
 </blockquote>
@@ -414,9 +546,9 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>The ID of the campaign to retrieve.</td>
 </tr>
 </tbody></table>
-<h2 id='export-leads-of-a-campaign'>Export Leads of a Campaign</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export/list <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h2 id='export-leads-of-a-campaign'>Export Leads of a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export/list <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns the CSV file for the campaign <code>cam_123456</code></p>
 </blockquote>
@@ -436,24 +568,24 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>The ID of the campaign to retrieve.</td>
 </tr>
 </tbody></table>
-<h2 id='add-a-lead-in-a-campaign'>Add a Lead in a Campaign</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
-  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-  --data <span class="s1">'{"firstName":"Richard","lastName":"Hendricks"}'</span> <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h2 id='add-a-lead-in-a-campaign'>Add a Lead in a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"firstName":"Richard","lastName":"Hendricks"}'</span> <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aa7uvyxECcni5KXBM"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"leadUrl"</span><span class="p">:</span><span class="s2">"https://api.lemlist.com/api/leads/richard%40piedpiper.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aa7uvyxECcni5KXBM"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"leadUrl"</span><span class="p">:</span><span class="s2">"https://api.lemlist.com/api/leads/richard%40piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint adds a lead in a specific campaign. If the lead doesn&#39;t exist, it&#39;ll be created, then inserted to the campaign.</p>
 
 <p>You can just add the email without any body.</p>
@@ -475,24 +607,24 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>email address of the lead</td>
 </tr>
 </tbody></table>
-<h3 id='query-parameters-2'>Query Parameters</h3><pre class="highlight shell tab-shell"><code>curl POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true"</span> <span class="se">\</span>
-  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-  --data <span class="s1">'{"firstName":"Richard","lastName":"Hendricks"}'</span> <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h3 id='query-parameters-2'>Query Parameters</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"firstName":"Richard","lastName":"Hendricks"}'</span> <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aa7uvyxECcni5KXBM"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"leadUrl"</span><span class="p">:</span><span class="s2">"https://api.lemlist.com/api/leads/richard%40piedpiper.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aa7uvyxECcni5KXBM"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"leadUrl"</span><span class="p">:</span><span class="s2">"https://api.lemlist.com/api/leads/richard%40piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -528,17 +660,17 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>Company name of the lead.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-lead-from-a-campaign'>Delete a Lead from a Campaign</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h2 id='delete-a-lead-from-a-campaign'>Delete a Lead from a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@piedpiper.com"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@piedpiper.com"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint delete a lead from a specific campaign.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>DELETE https://api.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
@@ -558,19 +690,19 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>email address of the lead</td>
 </tr>
 </tbody></table>
-<h1 id='leads'>Leads</h1><h2 id='get-a-specific-lead-by-email'>Get a Specific Lead by Email</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/leads/:email <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h1 id='leads'>Leads</h1><h2 id='get-a-specific-lead-by-email'>Get a Specific Lead by Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/leads/:email <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves all the information of a specific lead using its email.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.lemlist.com/api/leads/:email</code></p>
@@ -586,56 +718,56 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>email address of the lead.</td>
 </tr>
 </tbody></table>
-<h1 id='activities'>Activities</h1><h2 id='get-team-information'>Get Team Information</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/activities <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h1 id='activities'>Activities</h1><h2 id='get-team-information'>Get Team Information</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/activities <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"act_aaXiFy3Y7BNSuYwDr"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"isFirst"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emailsSent"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"teamId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tea_aaqam5a3BkY8zje24"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T14:56:39.172Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sendUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sendUserEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sendUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Richard Hendricks"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"leadId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aafF6i3BjsDRDNAWN"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"leadFirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeanne"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"leadLastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"leadEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jeanne@doe.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaktcZg9z9xJKQgqK"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"listId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lst_aa5tgpggEfYeJ9vbJ"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sequenceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seq_aaPoZgbALLQhcLmqz"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sequenceStep"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"emailTemplateId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"etp_aatuEkEztDPm32b23"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"emailTemplateName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales: The Honest One"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"emailId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eml_aaFHxT2ejiz7apYnn"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"act_aaXiFy3Y7BNSuYwDr"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isFirst"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emailsSent"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"teamId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tea_aaqam5a3BkY8zje24"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T14:56:39.172Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sendUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sendUserEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sendUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Richard Hendricks"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"leadId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aafF6i3BjsDRDNAWN"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"leadFirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeanne"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"leadLastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"leadEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jeanne@doe.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaktcZg9z9xJKQgqK"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"listId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lst_aa5tgpggEfYeJ9vbJ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sequenceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seq_aaPoZgbALLQhcLmqz"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sequenceStep"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"emailTemplateId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"etp_aatuEkEztDPm32b23"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"emailTemplateName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales: The Honest One"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"emailId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eml_aaFHxT2ejiz7apYnn"</span><span class="w">
 </span><span class="p">},{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"act_aavmrPCCZGMSsCSNw"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"isFirst"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emailsSent"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"teamId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tea_aqam5a3BkY8zje24"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T14:51:35.726Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sendUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sendUserEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sendUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Richard Hendricks"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"leadId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aafF6i3BjsDRDNAWN"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"leadFirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeanne"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"leadLastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"leadEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jeanne"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaktcZg9z9xJKQgqK"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"listId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lst_aa5tgpggEfYeJ9vbJ"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sequenceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seq_aaPoZgbALLQhcLmqz"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sequenceStep"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"emailTemplateId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"etp_aak9yNgefLCCB7ghA"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"emailTemplateName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I Just Call"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"emailId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eml_aabhRvzfe9sFErQ2b"</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"act_aavmrPCCZGMSsCSNw"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isFirst"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emailsSent"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"teamId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tea_aqam5a3BkY8zje24"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-24T14:51:35.726Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sendUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usr_aawMB5Gd5JJCFYvjp"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sendUserEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sendUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Richard Hendricks"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"leadId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aafF6i3BjsDRDNAWN"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"leadFirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeanne"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"leadLastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"leadEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jeanne"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaktcZg9z9xJKQgqK"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"campaignName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"listId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lst_aa5tgpggEfYeJ9vbJ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sequenceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seq_aaPoZgbALLQhcLmqz"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sequenceStep"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"emailTemplateId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"etp_aak9yNgefLCCB7ghA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"emailTemplateName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I Just Call"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"emailId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eml_aabhRvzfe9sFErQ2b"</span><span class="w">
 </span><span class="p">}]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves the last 100 activities.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.lemlist.com/api/activities</code></p>
@@ -659,20 +791,20 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>(Optional) Only retrieve the first time this activity happened.</td>
 </tr>
 </tbody></table>
-<h1 id='unsubscribes'>Unsubscribes</h1><h2 id='list-all-unsubscribes'>List All Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/unsubscribes <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h1 id='unsubscribes'>Unsubscribes</h1><h2 id='list-all-unsubscribes'>List All Unsubscribes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/unsubscribes <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lead_123456"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.com"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lead_123456"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.com"</span><span class="w">
 </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lead_123457"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b@b.com"</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lead_123457"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b@b.com"</span><span class="w">
 </span><span class="p">}]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves the list of all people who are unsubscribed.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.lemlist.com/api/unsubscribes</code></p>
@@ -692,9 +824,9 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>(Optional) Number of email to retrieve. 100 per default.</td>
 </tr>
 </tbody></table>
-<h2 id='export-the-list-of-unsubscribes'>Export the List of Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/unsubscribes/export <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h2 id='export-the-list-of-unsubscribes'>Export the List of Unsubscribes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/unsubscribes/export <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns the CSV file with all unsubscribed email addresses.</p>
 </blockquote>
@@ -704,17 +836,17 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <p><code>GET https://api.lemlist.com/api/unsubscribes/export</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <p>No parameters.</p>
-<h2 id='add-an-email-address-in-the-unsubscribes'>Add an Email Address in the Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h2 id='add-an-email-address-in-the-unsubscribes'>Add an Email Address in the Unsubscribes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aaJgm566c9tyzTBeu"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.com"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aaJgm566c9tyzTBeu"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.com"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint adds a lead in the unsubscribed list.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/unsubscribes/:email</code></p>
@@ -730,17 +862,17 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>email address to unsubscribe.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-an-email-address-from-the-unsubscribes'>Delete an Email Address from the Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://api.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h2 id='delete-an-email-address-from-the-unsubscribes'>Delete an Email Address from the Unsubscribes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE https://api.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aaJgm566c9tyzTBeu"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.com"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aaJgm566c9tyzTBeu"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.com"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint deletes a lead in the unsubscribed list.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>DELETE https://api.lemlist.com/api/unsubscribes/:email</code></p>
@@ -758,37 +890,37 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 </tbody></table>
 <h1 id='hooks'>Hooks</h1>
 <p>Hooks are a way to for us to contact your server when an even happen in lemlist. You can list, add or delete hooks.</p>
-<h2 id='list-all-hooks'>List All Hooks</h2><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/hooks <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h2 id='list-all-hooks'>List All Hooks</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/hooks <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hoo_aadabFv7dRoP2L8GJ"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://youserver.com/lemlist-hook"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T12:19:26.608Z"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hoo_aadabFv7dRoP2L8GJ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://youserver.com/lemlist-hook"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T12:19:26.608Z"</span><span class="w">
 </span><span class="p">}]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves the list of all hooks.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.lemlist.com/api/hooks</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <p>No parameters.</p>
-<h2 id='add-a-hook'>Add a Hook</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.lemlist.com/api/hooks <span class="se">\</span>
-  --data <span class="s1">'{"targetUrl":"https://youserver.com/lemlist-hook"}'</span> <span class="se">\</span>
-  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h2 id='add-a-hook'>Add a Hook</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/hooks <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"targetUrl":"https://youserver.com/lemlist-hook"}'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hoo_aadabFv7dRoP2L8GJ"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://youserver.com/lemlist-hook"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T12:19:26.608Z"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hoo_aadabFv7dRoP2L8GJ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://youserver.com/lemlist-hook"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T12:19:26.608Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint adds a hook in our system. Each time an event happen, we&#39;ll call <code>targetUrl</code>.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/hooks</code></p>
@@ -814,18 +946,18 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>(Optional) We&#39;ll call this hook only the first time this activity happened.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-hook'>Delete a Hook</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE https://api.lemlist.com/api/hooks/hoo_123456 <span class="se">\</span>
-  --user <span class="s2">":YourApiKey"</span>
-</code></pre>
+<h2 id='delete-a-hook'>Delete a Hook</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE https://api.lemlist.com/api/hooks/hoo_123456 <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hoo_aadabFv7dRoP2L8GJ"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://youserver.com/lemlist-hook"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T12:19:26.608Z"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hoo_aadabFv7dRoP2L8GJ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://youserver.com/lemlist-hook"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T12:19:26.608Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint delete a hook.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>DELETE https://api.lemlist.com/api/hooks/:_id</code></p>
