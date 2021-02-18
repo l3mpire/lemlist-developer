@@ -22,10 +22,7 @@ build/
 _yardoc
 doc/
 .idea/
-<<<<<<< HEAD
 .vagrant
-=======
 
 # Vagrant artifacts
 ubuntu-*-console.log
->>>>>>> e3a3a3a8b4d66e4168525bf61a918e3e3964563c

@@ -4,7 +4,7 @@ title: lemlist Developer Documentation
 toc_footers:
   - <a href='https://lemlist.com'>lemlist Homepage</a>
   - <a href='http://help.lemlist.com'>lemlist Faq</a>
-  - <a href='https://github.com/peernohell/lemlist-developer/blob/master/source/index.html.md'>Report an issue in this doc</a>
+  - <a href='https://github.com/l3mpire/lemlist-developer/blob/master/source/index.html.md'>Report an issue in this doc</a>
 
 includes:
   - team
@@ -57,15 +57,7 @@ X-RateLimit-Reset | The date when the rate limit will reset
 
 A lead, recipient or buddy-to-be is a person that you try to contact using lemlist. Lead is the developer term in the API and is the same thing than buddy-to-be in the app. You know... marketing...
 
-<<<<<<< HEAD
 ## Unsubscribe
-=======
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
->>>>>>> e3a3a3a8b4d66e4168525bf61a918e3e3964563c
 
 Unsubscribe is the developer term for the graveyard. Where person decide that they don't want to receive email from you anymore.
 
