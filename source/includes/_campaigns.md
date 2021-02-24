@@ -153,7 +153,7 @@ firstName | First name of the lead.
 lastName | Last name of the lead.
 companyName | Company name of the lead.
 
-## Delete a Lead from a Campaign
+## Unsubscribe a Lead from a Campaign
 
 ```shell
 curl -X DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com \
@@ -169,7 +169,8 @@ curl -X DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads
 }
 ```
 
-This endpoint delete a lead from a specific campaign.
+This endpoint will unsuscribe a lead from a specific campaign.
+
 
 ### HTTP Request
 
@@ -181,3 +182,37 @@ Parameter | Description
 --------- | -----------
 campaignId | The ID of the campaign to add the lead.
 email | email address of the lead
+## Delete a Lead from a Campaign
+
+```shell
+curl -X DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?action=remove \
+  --user ":YourApiKey"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "_id": "lea_aaNfSAHJoa4gj86Px",
+  "email": "richard@piedpiper.com"
+}
+```
+
+This endpoint delete a lead from a specific campaign.  
+All information, including statistics, will be deleted.
+
+### HTTP Request
+
+`DELETE https://api.lemlist.com/api/campaigns/:campaignId/leads/:email?action=remove`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+campaignId | The ID of the campaign to add the lead.
+email | email address of the lead
+### Query Parameters
+
+Parameter | Value | Description
+--------- | ----- | -----------
+action | remove | Force the deletion of the lead
