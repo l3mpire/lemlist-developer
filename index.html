@@ -349,6 +349,9 @@
                     <a href="#add-a-lead-in-a-campaign" class="toc-h2 toc-link" data-title="Add a Lead in a Campaign">Add a Lead in a Campaign</a>
                   </li>
                   <li>
+                    <a href="#unsubscribe-a-lead-from-a-campaign" class="toc-h2 toc-link" data-title="Unsubscribe a Lead from a Campaign">Unsubscribe a Lead from a Campaign</a>
+                  </li>
+                  <li>
                     <a href="#delete-a-lead-from-a-campaign" class="toc-h2 toc-link" data-title="Delete a Lead from a Campaign">Delete a Lead from a Campaign</a>
                   </li>
               </ul>
@@ -660,7 +663,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>Company name of the lead.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-lead-from-a-campaign'>Delete a Lead from a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
+<h2 id='unsubscribe-a-lead-from-a-campaign'>Unsubscribe a Lead from a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
 <blockquote>
@@ -671,7 +674,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
   </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@piedpiper.com"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint delete a lead from a specific campaign.</p>
+<p>This endpoint will unsuscribe a lead from a specific campaign.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>DELETE https://api.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
@@ -688,6 +691,51 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <tr>
 <td>email</td>
 <td>email address of the lead</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-lead-from-a-campaign'>Delete a Lead from a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?action<span class="o">=</span>remove <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@piedpiper.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint delete a lead from a specific campaign.<br>
+All information, including statistics, will be deleted.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>DELETE https://api.lemlist.com/api/campaigns/:campaignId/leads/:email?action=remove</code></p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>The ID of the campaign to add the lead.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email address of the lead</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>action</td>
+<td>remove</td>
+<td>Force the deletion of the lead</td>
 </tr>
 </tbody></table>
 <h1 id='leads'>Leads</h1><h2 id='get-a-specific-lead-by-email'>Get a Specific Lead by Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/leads/:email <span class="se">\</span>
