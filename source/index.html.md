@@ -74,7 +74,7 @@ curl https://api.lemlist.com/api/team \
 
 All API routes are using the dedicated sub domain `api.lemlist.com`.
 
-lemlist uses API keys to allow access to the API. You can get your lemlist API key at our [integration page](https://app.lemlist.com/integrations).
+lemlist uses API keys to allow access to the API. You can get your lemlist API key at our [integration page](https://app.lemlist.com/settings/integrations).
 
 You need to add the `Authorization` header using the `Basic` authentication type. `login:password` where the login is always empty and the password is the API key.
 
