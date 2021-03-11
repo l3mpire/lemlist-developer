@@ -153,6 +153,50 @@ firstName | First name of the lead.
 lastName | Last name of the lead.
 companyName | Company name of the lead.
 
+## Update a Lead in a Campaign
+```shell
+curl -X PATCH https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com \
+  -H "Content-Type: application/json" \
+  --data '{"companyName":"Pied Piper"}' \
+  --user ":YourApiKey"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "campaignId": "cam_aa7uvyxECcni5KXBM",
+  "campaignName": "Campaign1",
+  "leadUrl":"https://api.lemlist.com/api/leads/richard%40piedpiper.com",
+  "_id":"lea_aaNfSAHJoa4gj86Px",
+  "email":"richard@piedpiper.com",
+  "firstName":"Richard",
+  "lastName":"Hendricks",
+  "companyName": "Pied Piper"
+}
+```
+
+This endpoint updates a lead in a specific campaign.
+
+If the lead doesn't exist a 404 error will be returned.
+
+### HTTP Request
+
+`PATCH https://api.lemlist.com/api/campaigns/:campaignId/leads/:email`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+campaignId | The ID of the campaign to add the lead.
+email | email address of the lead
+
+### Body Parameters
+
+Body is mandatory. It must be a JSON object with any information you want to update on the lead.
+
+If no body is specified a 401 error will be returned.
+
 ## Unsubscribe a Lead from a Campaign
 
 ```shell
