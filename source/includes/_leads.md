@@ -78,7 +78,7 @@ curl -X POST https://api.lemlist.com/api/leads/start/:email \
 }
 ```
 
-This endpoint start a specific lead using its email in all campaigns.
+This endpoint starts a specific lead using its email in all campaigns.
 
 ### HTTP Request
 
