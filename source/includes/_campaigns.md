@@ -195,7 +195,7 @@ email | email address of the lead
 
 Body is mandatory. It must be a JSON object with any information you want to update on the lead.
 
-If no body is specified a 401 error will be returned.
+If no body is specified a 400 error will be returned.
 
 ## Unsubscribe a Lead from a Campaign
 
