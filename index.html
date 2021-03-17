@@ -365,6 +365,12 @@
                   <li>
                     <a href="#get-a-specific-lead-by-email" class="toc-h2 toc-link" data-title="Get a Specific Lead by Email">Get a Specific Lead by Email</a>
                   </li>
+                  <li>
+                    <a href="#pause-a-specific-lead-by-email" class="toc-h2 toc-link" data-title="Pause a Specific Lead by Email">Pause a Specific Lead by Email</a>
+                  </li>
+                  <li>
+                    <a href="#resume-a-specific-lead-by-email" class="toc-h2 toc-link" data-title="Resume a Specific Lead by Email">Resume a Specific Lead by Email</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -709,7 +715,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <h3 id='body-parameters-2'>Body Parameters</h3>
 <p>Body is mandatory. It must be a JSON object with any information you want to update on the lead.</p>
 
-<p>If no body is specified a 401 error will be returned.</p>
+<p>If no body is specified a 400 error will be returned.</p>
 <h2 id='unsubscribe-a-lead-from-a-campaign'>Unsubscribe a Lead from a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
@@ -802,6 +808,62 @@ All information, including statistics, will be deleted.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.lemlist.com/api/leads/:email</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>email address of the lead.</td>
+</tr>
+</tbody></table>
+<h2 id='pause-a-specific-lead-by-email'>Pause a Specific Lead by Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/leads/pause/:email <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint pauses a specific lead using its email in all campaigns.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.lemlist.com/api/leads/pause/:email</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>email address of the lead.</td>
+</tr>
+</tbody></table>
+<h2 id='resume-a-specific-lead-by-email'>Resume a Specific Lead by Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/leads/start/:email <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint starts a specific lead using its email in all campaigns.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://api.lemlist.com/api/leads/start/:email</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
