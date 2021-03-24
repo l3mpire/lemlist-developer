@@ -68,3 +68,5 @@ Parameter | Description
 type | (Optional) The type of activity you want to retrieve. Can be `emailsSent`, `emailsOpened`, `emailsClicked`, `emailsReplied`, `emailsBounced`, `emailsSendFailed`, `emailsUnsubscribed`.
 campaignId | (Optional) Retrieve activities of this `campaignId`.
 isFirst | (Optional) Only retrieve the first time this activity happened.
+offset | (Optional) Offset from the start. For pagination.
+limit | (Optional) Number of campaigns to retrieve. 100 per default ( and 100 max ).
