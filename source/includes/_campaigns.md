@@ -27,7 +27,10 @@ This endpoint retrieves the list of all campaigns.
 
 ### Query Parameters
 
-No parameters.
+Parameter | Description
+--------- | -----------
+offset | (Optional) Offset from the start. For pagination.
+limit | (Optional) Number of campaigns to retrieve. 100 per default ( and 100 max ).
 
 
 ## Export Statistics of a Campaign
