@@ -535,7 +535,21 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.lemlist.com/api/campaigns</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
-<p>No parameters.</p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offset</td>
+<td>(Optional) Offset from the start. For pagination.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>(Optional) Number of campaigns to retrieve. 100 per default ( and 100 max ).</td>
+</tr>
+</tbody></table>
 <h2 id='export-statistics-of-a-campaign'>Export Statistics of a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
@@ -946,6 +960,14 @@ All information, including statistics, will be deleted.</p>
 <tr>
 <td>isFirst</td>
 <td>(Optional) Only retrieve the first time this activity happened.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>(Optional) Offset from the start. For pagination.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>(Optional) Number of campaigns to retrieve. 100 per default ( and 100 max ).</td>
 </tr>
 </tbody></table>
 <h1 id='unsubscribes'>Unsubscribes</h1><h2 id='list-all-unsubscribes'>List All Unsubscribes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/unsubscribes <span class="se">\</span>
