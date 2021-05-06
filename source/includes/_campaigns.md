@@ -100,7 +100,7 @@ curl -X POST https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/r
 }
 ```
 
-This endpoint adds a lead in a specific campaign. If the lead doesn't exist, it'll be created, then inserted to the campaign.
+This endpoint adds a lead in a specific campaign. If the lead doesn't exist, it'll be created, then inserted to the campaign. The creator of the lead is the campaign's sender
 
 You can just add the email without any body.
 
