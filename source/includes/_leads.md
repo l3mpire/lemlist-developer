@@ -40,12 +40,12 @@ curl -X POST https://api.lemlist.com/api/leads/pause/:email \
 > The above command returns JSON structured like this:
 
 ```json
-{
+[{
   "_id":"lea_aaNfSAHJoa4gj86Px",
   "email":"richard@piedpiper.com",
   "firstName":"Richard",
   "lastName":"Hendricks"
-}
+}]
 ```
 
 This endpoint pauses a specific lead using its email in all campaigns.
@@ -70,12 +70,12 @@ curl -X POST https://api.lemlist.com/api/leads/start/:email \
 > The above command returns JSON structured like this:
 
 ```json
-{
+[{
   "_id":"lea_aaNfSAHJoa4gj86Px",
   "email":"richard@piedpiper.com",
   "firstName":"Richard",
   "lastName":"Hendricks"
-}
+}]
 ```
 
 This endpoint starts a specific lead using its email in all campaigns.
