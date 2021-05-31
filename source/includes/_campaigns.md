@@ -216,7 +216,7 @@ curl -X DELETE https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads
 }
 ```
 
-This endpoint will unsuscribe a lead from a specific campaign.
+This endpoint will unsubscribe a lead from all campaigns if he belongs to the specified campaign.
 
 
 ### HTTP Request
