@@ -572,7 +572,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>The ID of the campaign to retrieve.</td>
 </tr>
 </tbody></table>
-<h2 id='export-leads-of-a-campaign'>Export Leads of a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export/list <span class="se">\</span>
+<h2 id='export-leads-of-a-campaign'>Export Leads of a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export/list?state<span class="o">=</span>all <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
 <blockquote>
@@ -581,7 +581,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 
 <p>This endpoint downloads a CSV file that contains all the leads of a campaign.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://api.lemlist.com/api/campaigns/:campaignId/export</code></p>
+<p><code>GET https://api.lemlist.com/api/campaigns/:campaignId/export/list?state=all</code>  </p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -592,6 +592,18 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <tr>
 <td>campaignId</td>
 <td>The ID of the campaign to retrieve.</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>state=all</td>
+<td>Filter to export only the specified states, all will export all states. Possible states are imported, scanned, skipped, reviewed, contacted, hooked, attracted, warmed, notInterested, interested, emailsBounced, failed, emailsUnsubscribed</td>
 </tr>
 </tbody></table>
 <h2 id='add-a-lead-in-a-campaign'>Add a Lead in a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
@@ -633,7 +645,7 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>email address of the lead</td>
 </tr>
 </tbody></table>
-<h3 id='query-parameters-2'>Query Parameters</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true"</span> <span class="se">\</span>
+<h3 id='query-parameters-3'>Query Parameters</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{"firstName":"Richard","lastName":"Hendricks"}'</span> <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
@@ -791,7 +803,7 @@ All information, including statistics, will be deleted.</p>
 <td>email address of the lead</td>
 </tr>
 </tbody></table>
-<h3 id='query-parameters-3'>Query Parameters</h3>
+<h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
