@@ -36,17 +36,17 @@ limit | (Optional) Number of email to retrieve. 100 per default.
 ## Export the List of Unsubscribes
 
 ```shell
-curl https://api.lemlist.com/api/unsubscribes/export \
+curl https://api.lemlist.com/api/unsubs/export \
   --user ":YourApiKey"
 ```
 
-> The above command returns the CSV file with all unsubscribed email addresses.
+> The above command returns the CSV file with all unsubscribed email addresses (in the limit of maximum 10 000 emails).
 
 This endpoint downloads a CSV file that contains all the unsubscribed email addresses.
 
 ### HTTP Request
 
-`GET https://api.lemlist.com/api/unsubscribes/export`
+`GET https://api.lemlist.com/api/unsubs/export`
 
 ### URL Parameters
 
