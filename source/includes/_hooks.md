@@ -61,7 +61,7 @@ Body is optional. If set, It must be a JSON object with one of those parameters.
 
 Parameter | Description
 --------- | -----------
-type | (Optional) We'll call this hook only if the event is of the type `type`. `type` can be `emailsSent`, `emailsOpened`, `emailsClicked`, `emailsReplied`, `emailsBounced`, `emailsSendFailed`, `emailsUnsubscribed`.
+type | (Optional) We'll call this hook only if the event is of the type `type`. `type` can be `contacted`, `hooked`, `attracted`, `warmed`, `interested`, `skipped`, `notInterested`, `emailsSent`, `emailsOpened`, `emailsClicked`, `emailsReplied`, `emailsBounced`, `emailsSendFailed`, `emailsFailed`, `emailsUnsubscribed`, `emailsInterested`, `emailsNotInterested`, `opportunitiesDone`, `aircallCreated`, `aircallEnded`, `aircallDone`, `aircallInterested`, `aircallNotInterested`, `apiDone`, `apiInterested`, `apiNotInterested`, `apiFailed`, `linkedinVisitDone`, `linkedinVisitFailed`, `linkedinInviteDone`, `linkedinInviteFailed`, `linkedinInviteAccepted`, `linkedinReplied`, `linkedinSent`, `linkedinInterested`, `linkedinNotInterested`, `linkedinSendFailed`, `manualInterested`, `manualNotInterested`, `paused`, `resumed`.
 campaignId | (Optional) We'll call this hook only for this `campaignId`.
 isFirst | (Optional) We'll call this hook only the first time this activity happened.
 
