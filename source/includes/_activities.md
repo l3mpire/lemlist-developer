@@ -1,6 +1,6 @@
 # Activities
 
-## Get Team Information
+## Get Activities
 
 ```shell
 curl https://api.lemlist.com/api/activities \
