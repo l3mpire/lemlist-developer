@@ -49,7 +49,7 @@ curl -X POST https://api.lemlist.com/api/hooks \
 }
 ```
 
-This endpoint adds a hook in our system. Each time an event happen, we'll call `targetUrl`.
+This endpoint adds a hook in our system. Each time an event happen, we'll call `targetUrl` with the event data as an object. To know more about the data passed, see [activities](/#get-activities)
 
 ### HTTP Request
 
