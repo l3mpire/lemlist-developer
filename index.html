@@ -380,7 +380,7 @@
             <a href="#activities" class="toc-h1 toc-link" data-title="Activities">Activities</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-team-information" class="toc-h2 toc-link" data-title="Get Team Information">Get Team Information</a>
+                    <a href="#get-activities" class="toc-h2 toc-link" data-title="Get Activities">Get Activities</a>
                   </li>
               </ul>
           </li>
@@ -932,7 +932,7 @@ All information, including statistics, will be deleted.</p>
 <td>email address of the lead.</td>
 </tr>
 </tbody></table>
-<h1 id='activities'>Activities</h1><h2 id='get-team-information'>Get Team Information</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/activities <span class="se">\</span>
+<h1 id='activities'>Activities</h1><h2 id='get-activities'>Get Activities</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/activities <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
 <blockquote>
@@ -1145,7 +1145,7 @@ All information, including statistics, will be deleted.</p>
   </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T12:19:26.608Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint adds a hook in our system. Each time an event happen, we&#39;ll call <code>targetUrl</code>.</p>
+<p>This endpoint adds a hook in our system. Each time an event happen, we&#39;ll call <code>targetUrl</code> with the event data as an object. To know more about the data passed, see <a href="/#get-activities">activities</a></p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/hooks</code></p>
 <h3 id='body-parameters'>Body Parameters</h3>
