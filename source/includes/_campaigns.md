@@ -88,7 +88,9 @@ state=all | Filter to export only the specified states, all will export all stat
 ```shell
 curl -X POST https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com \
   -H "Content-Type: application/json" \
-  --data '{"firstName":"Richard","lastName":"Hendricks"}' \
+  --data '{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text",\
+  "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg",\
+  "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}' \
   --user ":YourApiKey"
 ```
 
@@ -100,9 +102,15 @@ curl -X POST https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/r
   "campaignName": "Campaign1",
   "leadUrl":"https://api.lemlist.com/api/leads/richard%40piedpiper.com",
   "_id":"lea_aaNfSAHJoa4gj86Px",
+  "isPaused":false,
   "email":"richard@piedpiper.com",
   "firstName":"Richard",
-  "lastName":"Hendricks"
+  "lastName":"Hendricks",
+  "companyName":"Piedpiper",
+  "icebreaker":"Icebreaker text",
+  "phone":"(555) 555-1234",
+  "picture":"https://piedpiper.com/richard-hendricks.jpg",
+  "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"
 }
 ```
 
@@ -127,7 +135,9 @@ email | email address of the lead
 ```shell
 curl POST "https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true" \
   -H "Content-Type: application/json" \
-  --data '{"firstName":"Richard","lastName":"Hendricks"}' \
+  --data '{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text",\
+  "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg",\
+  "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}' \
   --user ":YourApiKey"
 ```
 
@@ -139,9 +149,15 @@ curl POST "https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/ric
   "campaignName": "Campaign1",
   "leadUrl":"https://api.lemlist.com/api/leads/richard%40piedpiper.com",
   "_id":"lea_aaNfSAHJoa4gj86Px",
+  "isPaused":false,
   "email":"richard@piedpiper.com",
   "firstName":"Richard",
-  "lastName":"Hendricks"
+  "lastName":"Hendricks",
+  "companyName":"Piedpiper",
+  "icebreaker":"Icebreaker text",
+  "phone":"(555) 555-1234",
+  "picture":"https://piedpiper.com/richard-hendricks.jpg",
+  "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"
 }
 ```
 
