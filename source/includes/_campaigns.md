@@ -177,7 +177,10 @@ Parameter | Description
 firstName | First name of the lead.
 lastName | Last name of the lead.
 companyName | Company name of the lead.
-
+icebreaker | Icebreaker text of the lead.
+phone | Phone number of the lead.
+picture | Picture url of the lead.
+linkedinUrl | Linkedin url of the lead.
 ## Update a Lead in a Campaign
 ```shell
 curl -X PATCH https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com \
