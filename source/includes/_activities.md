@@ -65,7 +65,7 @@ This endpoint retrieves the last 100 activities.
 
 Parameter | Description
 --------- | -----------
-type | (Optional) The type of activity you want to retrieve. Can be `emailsSent`, `emailsOpened`, `emailsClicked`, `emailsReplied`, `emailsBounced`, `emailsSendFailed`, `emailsUnsubscribed`.
+type | (Optional) The type of activity you want to retrieve. Can be `emailsSent`, `emailsOpened`, `emailsClicked`, `emailsReplied`, `emailsDone`, `emailsBounced`, `emailsFailed`, `emailsUnsubscribed`, `emailsInterested`, `emailsNotInterested`, `snoozed`, `annotated`, `aircallDone`, `aircallCreated`, `aircallEnded`, `aircallInterested`, `aircallNotInterested`, `apiDone`, `apiInterested`, `apiNotInterested`, `apiFailed`, `linkedinVisitDone`, `linkedinVisitFailed`, `linkedinInviteDone`, `linkedinSent`, `linkedinOpened`, `linkedinInviteAccepted`, `linkedinInviteFailed`, `linkedinSendFailed`, `linkedinReplied`, `linkedinInterested`, `linkedinNotInterested`, `linkedinDone`, `manualDone`, `manualInterested`, `manualNotInterested`, `paused`, `resumed`, `skipped`, `contacted`, `hooked`, `attracted`, `warmed`, `interested`, `skipped`, `notInterested`.
 campaignId | (Optional) Retrieve activities of this `campaignId`.
 isFirst | (Optional) Only retrieve the first time this activity happened.
 offset | (Optional) Offset from the start. For pagination.
