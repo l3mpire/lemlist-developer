@@ -12,7 +12,8 @@ curl https://api.lemlist.com/api/campaigns \
 ```json
 [{
   "_id": "cam_aaWL92T22Sei3Bz6v",
-  "name": "Campaign1"
+  "name": "Campaign1",
+  "labels": ["label 1", "label 2"]
 }, {
   "_id": "cam_aaXwBiebA8pWPKqpK",
   "name": "Campaign2"
