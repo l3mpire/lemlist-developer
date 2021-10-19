@@ -51,7 +51,9 @@ curl https://api.lemlist.com/api/activities \
   "sequenceStep": 1,
   "emailTemplateId": "etp_aak9yNgefLCCB7ghA",
   "emailTemplateName": "I Just Call",
-  "emailId": "eml_aabhRvzfe9sFErQ2b"
+  "emailId": "eml_aabhRvzfe9sFErQ2b",
+  "sequenceTested": "A",
+  "stepTested": "A"
 }]
 ```
 
