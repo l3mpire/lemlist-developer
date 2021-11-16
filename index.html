@@ -610,6 +610,66 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <td>Filter to export only the specified states, all will export all states. Possible states are imported, scanned, skipped, reviewed, contacted, hooked, attracted, warmed, notInterested, interested, emailsBounced, failed, emailsUnsubscribed</td>
 </tr>
 </tbody></table>
+
+<table><thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>imported</td>
+<td>All the leads that were imported without any other processing (not scanned, no step sent, not reviewed...)</td>
+</tr>
+<tr>
+<td>scanned</td>
+<td>All the leads that were scanned by linkedIn, or dropcontact</td>
+</tr>
+<tr>
+<td>skipped</td>
+<td>All the leads that were skipped during review</td>
+</tr>
+<tr>
+<td>reviewed</td>
+<td>All the leads that were reviewed</td>
+</tr>
+<tr>
+<td>contacted</td>
+<td>All the leads that were contacted (a step was done for this lead, without any response or click yet)</td>
+</tr>
+<tr>
+<td>hooked</td>
+<td>All the leads that opened an email or linkedIn</td>
+</tr>
+<tr>
+<td>attracted</td>
+<td>All the leads that clicked in an email, accepted a linkedIn invite</td>
+</tr>
+<tr>
+<td>warmed</td>
+<td>All the leads that replied to an email, or a linkedIn</td>
+</tr>
+<tr>
+<td>notInterested</td>
+<td>All the leads that were mark as notInterested</td>
+</tr>
+<tr>
+<td>interested</td>
+<td>All the leads that were mark as interested</td>
+</tr>
+<tr>
+<td>emailsBounced</td>
+<td>All the leads where at least one step bounced, either an email or a linkedIn or an api call</td>
+</tr>
+<tr>
+<td>emailsUnsubscribed</td>
+<td>All the leads that were an unsubscribe</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>Deprecated, use emailsBounced</td>
+</tr>
+</tbody></table>
 <h2 id='add-a-lead-in-a-campaign'>Add a Lead in a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text",\
