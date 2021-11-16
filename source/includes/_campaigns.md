@@ -83,6 +83,21 @@ Parameter | Description
 --------- | -----------
 state=all | Filter to export only the specified states, all will export all states. Possible states are imported, scanned, skipped, reviewed, contacted, hooked, attracted, warmed, notInterested, interested, emailsBounced, failed, emailsUnsubscribed
 
+State | Description
+----- | -----------
+imported | All the leads that were imported without any other processing (not scanned, no step sent, not reviewed...)
+scanned | All the leads that were scanned by linkedIn, or dropcontact
+skipped | All the leads that were skipped during review
+reviewed | All the leads that were reviewed
+contacted | All the leads that were contacted (a step was done for this lead, without any response or click yet)
+hooked | All the leads that opened an email or linkedIn
+attracted | All the leads that clicked in an email, accepted a linkedIn invite 
+warmed | All the leads that replied to an email, or a linkedIn
+notInterested | All the leads that were mark as notInterested
+interested | All the leads that were mark as interested
+emailsBounced | All the leads where at least one step bounced, either an email or a linkedIn or an api call
+emailsUnsubscribed | All the leads that were an unsubscribe
+failed | Deprecated, use emailsBounced
 
 ## Add a Lead in a Campaign
 
