@@ -940,6 +940,10 @@ All information, including statistics, will be deleted.</p>
 <td>email</td>
 <td>email address of the lead.</td>
 </tr>
+<tr>
+<td>campaignId</td>
+<td>(Optional) Search for this lead only the specified campaign</td>
+</tr>
 </tbody></table>
 <h2 id='pause-a-specific-lead-by-email'>Pause a Specific Lead by Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/leads/pause/:email <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
