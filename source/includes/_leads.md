@@ -29,6 +29,7 @@ This endpoint retrieves all the information of a specific lead using its email.
 Parameter | Description
 --------- | -----------
 email | email address of the lead.
+campaignId | (Optional) Search for this lead only the specified campaign 
 
 ## Pause a Specific Lead by Email
 
