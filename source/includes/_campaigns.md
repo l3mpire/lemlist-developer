@@ -108,7 +108,7 @@ curl https://api.lemlist.com/api/campaigns/cam_123456/export/exp_123456/status \
 }
 ```
 
-> returned object in case of success, note the `status` and `url` property
+> returned object in case of success, note the `status` and `url` properties
 
 
 This endpoint checks the status of an asynchronous export.
