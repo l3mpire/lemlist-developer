@@ -34,7 +34,111 @@ offset | (Optional) Offset from the start. For pagination.
 limit | (Optional) Number of campaigns to retrieve. 100 per default ( and 100 max ).
 
 
-## Export Statistics of a Campaign
+## Start Export of a Campaign
+
+```shell
+curl https://api.lemlist.com/api/campaigns/cam_123456/export/start \
+  --user ":YourApiKey"
+```
+> The above command returns an export ID for the campaign `cam_123456`
+
+
+```shell
+{
+  "ok": true,
+  "status": {
+    "exportId": "exp_123456",
+    "teamId": "team_123456",
+    "campaignId": "cam_123456",
+    "status": "pending",
+    "startedAt": "2020-01-01T00:00:00.000Z"
+  }
+}
+```
+
+> returned object in case of success, note the `exportId` property
+
+```shell
+{
+  "ok": false,
+  "message": "An error occurred"
+}
+```
+
+> returned object in case of failure
+
+
+This endpoint start an asynchronous export of all the statistics of a campaign. The final export result is a CSV file.
+
+You first start an export, get an export ID, and then periodically check the status of the export with the /status endpoint. You should stop as soon as you have a status that is different than "pending".
+
+It is "export ID based" and not "campaign ID based" so multiple exports on the same campaign can be done (let's say one started by a user in the application and another by a script).
+
+### HTTP Request
+
+`GET https://api.lemlist.com/api/campaigns/:campaignId/export/start`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+campaignId | The ID of the campaign to export.
+
+## Get status of a campaign export
+
+```shell
+curl https://api.lemlist.com/api/campaigns/cam_123456/export/exp_123456/status \
+  --user ":YourApiKey"
+```
+> The above command returns the status of a export
+
+
+```shell
+{
+  "ok": true,
+  "status": {
+    "exportId": "exp_123456",
+    "teamId": "team_123456",
+    "campaignId": "cam_123456",
+    "status": "done",
+    "startedAt": "2020-01-01T00:00:00.000Z"
+    "endedAt": "2020-01-01T00:00:00.000Z"
+    "url": "https://api.lemlist.com/api/files/exports/fil_exp_my_campaign.csv"
+  }
+}
+```
+
+> returned object in case of success, note the `status` and `url` property
+
+
+This endpoint checks the status of an asynchronous export.
+
+campaignId and exportId are required.
+
+In the returned object :
+
+* `status` can be "pending", "done", or "error".
+* `url` gives the final CSV file URL (only if the status is "done").
+
+### Expiration time
+
+Status are available for 2h only. An export that is still pending after 2h will be considered as failed and HTTP request statusCode will be 404.
+When you obtain the CSV file URL, you have to download the file in a 24 hours time frame. After that, the file will be deleted.
+
+
+### HTTP Request
+
+`GET https://api.lemlist.com/api/campaigns/:campaignId/export/:exportId/status`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+campaignId | The ID of the campaign that was exported with the /start endpoint.
+exportId | The ID of the export that was returned by the /start endpoint.
+
+
+## Synchronously Export Statistics of a Campaign <span style="color:red">(DEPRECATED)</span>
 
 ```shell
 curl https://api.lemlist.com/api/campaigns/cam_123456/export \
@@ -44,6 +148,8 @@ curl https://api.lemlist.com/api/campaigns/cam_123456/export \
 > The above command returns the CSV file for the campaign `cam_123456`
 
 This endpoint downloads a CSV file that contains all the statistics of a campaign.
+
+This synchronous endpoint is DEPRECATED since Dec, 3rd 2021 and will be removed in a future version. Please use the /start asynchronous endpoint instead.
 
 ### HTTP Request
 
