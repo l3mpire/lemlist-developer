@@ -138,6 +138,50 @@ campaignId | The ID of the campaign that was exported with the /start endpoint.
 exportId | The ID of the export that was returned by the /start endpoint.
 
 
+
+## Set an email for an campaign export
+
+```shell
+curl https://api.lemlist.com/api/campaigns/cam_123/export/exp_123/email/email@domain.com \
+  --user ":YourApiKey"
+```
+> The above command set the email for the export `exp_123456`
+
+
+```shell
+{
+  "ok": true,
+  "status": {
+    "exportId": "exp_123",
+    "teamId": "team_123",
+    "campaignId": "cam_123",
+    "status": "pending",
+    "startedAt": "2020-01-01T00:00:00.000Z"
+    "email": "email@domain.com"
+  }
+}
+```
+
+> returned object in case of success
+
+
+This endpoint set an email for a given export. When the export is done an email with the download url will be sent to the address provided.
+
+campaignId and exportId are required.
+
+### HTTP Request
+
+`GET https://api.lemlist.com/api/campaigns/:campaignId/export/:exportId/email/:email`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+campaignId | The ID of the campaign that was exported with the /start endpoint.
+exportId | The ID of the export that was returned by the /start endpoint.
+email | The email address to send the export url to when the export is done.
+
+
 ## Synchronously Export Statistics of a Campaign <span style="color:red">(DEPRECATED)</span>
 
 ```shell
