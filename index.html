@@ -346,6 +346,9 @@
                     <a href="#get-status-of-a-campaign-export" class="toc-h2 toc-link" data-title="Get status of a campaign export">Get status of a campaign export</a>
                   </li>
                   <li>
+                    <a href="#set-an-email-for-an-campaign-export" class="toc-h2 toc-link" data-title="Set an email for an campaign export">Set an email for an campaign export</a>
+                  </li>
+                  <li>
                     <a href="#synchronously-export-statistics-of-a-campaign-deprecated" class="toc-h2 toc-link" data-title="Synchronously Export Statistics of a Campaign (DEPRECATED)">Synchronously Export Statistics of a Campaign <span style="color:red">(DEPRECATED)</span></a>
                   </li>
                   <li>
@@ -541,6 +544,16 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campaign2"</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>Example with offset:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns?offset<span class="o">=</span>100 <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns max 100 campaigns starting from the 100th campaign.</p>
+</blockquote>
+
 <p>This endpoint retrieves the list of all campaigns.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.lemlist.com/api/campaigns</code></p>
@@ -662,6 +675,53 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <td>The ID of the export that was returned by the /start endpoint.</td>
 </tr>
 </tbody></table>
+<h2 id='set-an-email-for-an-campaign-export'>Set an email for an campaign export</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123/export/exp_123/email/email@domain.com <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command set the email for the export <code>exp_123456</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"ok"</span>: <span class="nb">true</span>,
+  <span class="s2">"status"</span>: <span class="o">{</span>
+    <span class="s2">"exportId"</span>: <span class="s2">"exp_123"</span>,
+    <span class="s2">"teamId"</span>: <span class="s2">"team_123"</span>,
+    <span class="s2">"campaignId"</span>: <span class="s2">"cam_123"</span>,
+    <span class="s2">"status"</span>: <span class="s2">"pending"</span>,
+    <span class="s2">"startedAt"</span>: <span class="s2">"2020-01-01T00:00:00.000Z"</span>
+    <span class="s2">"email"</span>: <span class="s2">"email@domain.com"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<blockquote>
+<p>returned object in case of success</p>
+</blockquote>
+
+<p>This endpoint set an email for a given export. When the export is done an email with the download url will be sent to the address provided.</p>
+
+<p>campaignId and exportId are required.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.lemlist.com/api/campaigns/:campaignId/export/:exportId/email/:email</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>The ID of the campaign that was exported with the /start endpoint.</td>
+</tr>
+<tr>
+<td>exportId</td>
+<td>The ID of the export that was returned by the /start endpoint.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email address to send the export url to when the export is done.</td>
+</tr>
+</tbody></table>
 <h2 id='synchronously-export-statistics-of-a-campaign-deprecated'>Synchronously Export Statistics of a Campaign <span style="color:red">(DEPRECATED)</span></h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
@@ -672,9 +732,9 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <p>This endpoint downloads a CSV file that contains all the statistics of a campaign.</p>
 
 <p>This synchronous endpoint is DEPRECATED since Dec, 3rd 2021 and will be removed in a future version. Please use the /start asynchronous endpoint instead.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://api.lemlist.com/api/campaigns/:campaignId/export</code></p>
-<h3 id='url-parameters-3'>URL Parameters</h3>
+<h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -686,7 +746,7 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <td>The ID of the campaign to retrieve.</td>
 </tr>
 </tbody></table>
-<h2 id='export-leads-of-a-campaign'>Export Leads of a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export/list?state<span class="o">=</span>all <span class="se">\</span>
+<h2 id='export-leads-of-a-campaign'>Export Leads of a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/campaigns/cam_123456/export/leads?state<span class="o">=</span>all <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
 <blockquote>
@@ -694,9 +754,9 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 </blockquote>
 
 <p>This endpoint downloads a CSV file that contains all the leads of a campaign.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET https://api.lemlist.com/api/campaigns/:campaignId/export/list?state=all</code>  </p>
-<h3 id='url-parameters-4'>URL Parameters</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://api.lemlist.com/api/campaigns/:campaignId/export/leads?state=all</code>  </p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -809,9 +869,9 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <p>This endpoint adds a lead in a specific campaign. If the lead doesn&#39;t exist, it&#39;ll be created, then inserted to the campaign. The creator of the lead is the campaign&#39;s sender</p>
 
 <p>You can just add the email without any body.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
-<h3 id='url-parameters-5'>URL Parameters</h3>
+<h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -926,9 +986,9 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <p>This endpoint updates a lead in a specific campaign.</p>
 
 <p>If the lead doesn&#39;t exist a 404 error will be returned.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>PATCH https://api.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
-<h3 id='url-parameters-6'>URL Parameters</h3>
+<h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -960,9 +1020,9 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint will unsubscribe a lead from all campaigns if he belongs to the specified campaign.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
 <p><code>DELETE https://api.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
-<h3 id='url-parameters-7'>URL Parameters</h3>
+<h3 id='url-parameters-8'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -991,9 +1051,9 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 </span></code></pre></div>
 <p>This endpoint delete a lead from a specific campaign.<br>
 All information, including statistics, will be deleted.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h3 id='http-request-10'>HTTP Request</h3>
 <p><code>DELETE https://api.lemlist.com/api/campaigns/:campaignId/leads/:email?action=remove</code></p>
-<h3 id='url-parameters-8'>URL Parameters</h3>
+<h3 id='url-parameters-9'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
