@@ -20,6 +20,17 @@ curl https://api.lemlist.com/api/campaigns \
 }]
 ```
 
+> Example with offset:
+
+```shell
+curl https://api.lemlist.com/api/campaigns?offset=100 \
+  --user ":YourApiKey"
+```
+
+> The above command returns max 100 campaigns starting from the 100th campaign.
+
+
+
 This endpoint retrieves the list of all campaigns.
 
 ### HTTP Request
