@@ -165,7 +165,7 @@ campaignId | The ID of the campaign to retrieve.
 ## Export Leads of a Campaign
 
 ```shell
-curl https://api.lemlist.com/api/campaigns/cam_123456/export/list?state=all \
+curl https://api.lemlist.com/api/campaigns/cam_123456/export/leads?state=all \
   --user ":YourApiKey"
 ```
 
@@ -175,7 +175,7 @@ This endpoint downloads a CSV file that contains all the leads of a campaign.
 
 ### HTTP Request
 
-`GET https://api.lemlist.com/api/campaigns/:campaignId/export/list?state=all`  
+`GET https://api.lemlist.com/api/campaigns/:campaignId/export/leads?state=all`  
 
 ### URL Parameters
 
