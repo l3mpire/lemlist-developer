@@ -182,7 +182,7 @@ campaignId and exportId are required.
 
 ### HTTP Request
 
-`GET https://api.lemlist.com/api/campaigns/:campaignId/export/:exportId/email/:email`
+`PUT https://api.lemlist.com/api/campaigns/:campaignId/export/:exportId/email/:email`
 
 ### URL Parameters
 
