@@ -120,3 +120,34 @@ This endpoint marks a specific lead as interested using its email in all campaig
 Parameter | Description
 --------- | -----------
 email | email address of the lead.
+
+## Mark as interested a Lead in a Specific Campaign
+
+```shell
+curl -X POST https://api.lemlist.com/api/campaigns/:campaignId/leads/interested/:email \
+  --user ":YourApiKey"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[{
+  "_id":"lea_aaNfSAHJoa4gj86Px",
+  "email":"richard@piedpiper.com",
+  "firstName":"Richard",
+  "lastName":"Hendricks"
+}]
+```
+
+This endpoint marks a specific lead as interested using its email in a specific campaigns.
+
+### HTTP Request
+
+`POST https://api.lemlist.com/api/campaigns/:campaignId/leads/interested/:email`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+campaignId | The ID of the campaign.
+email | email address of the lead.
