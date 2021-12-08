@@ -1,5 +1,34 @@
 # Campaigns
 
+## Get a specific campaign by id
+
+```shell
+curl https://api.lemlist.com/api/campaigns/:campaignId \
+  --user ":YourApiKey"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "_id": "cam_aaWL92T22Sei3Bz6v",
+  "name": "Campaign1",
+  "labels": ["label 1", "label 2"]
+}
+```
+
+This endpoint retrieves a campaign. Labels in returned object is optional if there are no label on campaign
+
+### HTTP Request
+
+`GET https://api.lemlist.com/api/campaigns/:campaignId`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+campaignId | Id of the campaign to retrieve.
+
 ## List All Campaigns
 
 ```shell
