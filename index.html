@@ -1232,7 +1232,7 @@ All information, including statistics, will be deleted.</p>
 <td>email address of the lead.</td>
 </tr>
 </tbody></table>
-<h2 id='mark-as-interested-a-lead-in-a-specific-campaign'>Mark as interested a Lead in a Specific Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/campaigns/:campaignId/leads/interested/:email <span class="se">\</span>
+<h2 id='mark-as-interested-a-lead-in-a-specific-campaign'>Mark as interested a Lead in a Specific Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/interested <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
 <blockquote>
@@ -1247,7 +1247,7 @@ All information, including statistics, will be deleted.</p>
 </span></code></pre></div>
 <p>This endpoint marks a specific lead as interested using its email in a specific campaigns.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST https://api.lemlist.com/api/campaigns/:campaignId/leads/interested/:email</code></p>
+<p><code>POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/interested</code></p>
 <h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
 <tr>
