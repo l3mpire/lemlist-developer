@@ -124,7 +124,7 @@ email | email address of the lead.
 ## Mark as interested a Lead in a Specific Campaign
 
 ```shell
-curl -X POST https://api.lemlist.com/api/campaigns/:campaignId/leads/interested/:email \
+curl -X POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/interested \
   --user ":YourApiKey"
 ```
 
@@ -143,7 +143,7 @@ This endpoint marks a specific lead as interested using its email in a specific 
 
 ### HTTP Request
 
-`POST https://api.lemlist.com/api/campaigns/:campaignId/leads/interested/:email`
+`POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/interested`
 
 ### Query Parameters
 
