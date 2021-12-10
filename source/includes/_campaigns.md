@@ -85,14 +85,18 @@ curl https://api.lemlist.com/api/campaigns/cam_123456/export/start \
 
 ```shell
 {
-  "ok": true,
-  "status": {
-    "exportId": "exp_123456",
-    "teamId": "team_123456",
-    "campaignId": "cam_123456",
-    "status": "pending",
-    "startedAt": "2020-01-01T00:00:00.000Z"
-  }
+   "id":"exp_123456",
+   "teamId":"team_123456",
+   "campaignId":"cam_123456",
+   "campaignName":"my new campaign",
+   "status":"pending",
+   "startedAt":"2020-01-01T00:00:00.000Z",
+   "progressIndex":0,
+   "progressTime":1639138958972,
+   "progressLastStepDuration":0,
+   "progressType":"starting",
+   "progress":0,
+   "total":0
 }
 ```
 
@@ -135,16 +139,23 @@ curl https://api.lemlist.com/api/campaigns/cam_123456/export/exp_123456/status \
 
 ```shell
 {
-  "ok": true,
-  "status": {
-    "exportId": "exp_123456",
-    "teamId": "team_123456",
-    "campaignId": "cam_123456",
-    "status": "done",
-    "startedAt": "2020-01-01T00:00:00.000Z"
-    "endedAt": "2020-01-01T00:00:00.000Z"
-    "url": "https://api.lemlist.com/api/files/exports/fil_exp_my_campaign.csv"
-  }
+   "ok":true,
+   "status":{
+      "id":"exp_123456",
+      "teamId":"team_123456",
+      "campaignId":"cam_123456",
+      "campaignName":"my new campaign",
+      "status":"done",
+      "startedAt":"2020-01-01T00:00:00.000Z",
+      "endedAt":"2020-01-01T00:00:00.000Z",
+      "progressIndex":6,
+      "progressTime":1639138959979,
+      "progressLastStepDuration":476,
+      "progressType":"done",
+      "progress":0,
+      "total":0,
+      "url":"https://api.lemlist.com/api/files/exports/fil_exp_my_new_campaign.csv"
+   }
 }
 ```
 
@@ -187,22 +198,53 @@ curl https://api.lemlist.com/api/campaigns/cam_123/export/exp_123/email/email@do
 ```
 > The above command set the email for the export `exp_123456`
 
-
 ```shell
 {
-  "ok": true,
-  "status": {
-    "exportId": "exp_123",
-    "teamId": "team_123",
-    "campaignId": "cam_123",
-    "status": "pending",
-    "startedAt": "2020-01-01T00:00:00.000Z"
-    "email": "email@domain.com"
-  }
+   "ok":true,
+   "status":{
+      "id":"exp_123",
+      "teamId":"team_123",
+      "campaignId":"cam_123",
+      "campaignName":"my new campaign",
+      "status":"pending",
+      "startedAt":"2020-01-01T00:00:00.000Z",
+      "progressIndex":6,
+      "progressTime":1639139515998,
+      "progressLastStepDuration":367,
+      "progressType":"done",
+      "progress":0,
+      "total":0,
+      "email":"email@domain.com"
+   }
 }
 ```
 
-> returned object in case of success
+> returned object in case of success, export finished
+
+```shell
+{
+   "ok":true,
+   "status":{
+      "id":"exp_123",
+      "teamId":"team_123",
+      "campaignId":"cam_123",
+      "campaignName":"my new campaign",
+      "status":"done",
+      "startedAt":"2020-01-01T00:00:00.000Z",
+      "endedAt":"2020-01-01T00:00:00.000Z",
+      "progressIndex":6,
+      "progressTime":1639139515998,
+      "progressLastStepDuration":367,
+      "progressType":"done",
+      "progress":0,
+      "total":0,
+      "url":"https://api.lemlist.com/api/files/exports/fil_exp_my_new_campaign.csv",
+      "email":"email@domain.com"
+   }
+}
+```
+
+> returned object in case of success, export in progress
 
 
 This endpoint set an email for a given export. When the export is done an email with the download url will be sent to the address provided.
