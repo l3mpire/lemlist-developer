@@ -613,14 +613,18 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <p>The above command returns an export ID for the campaign <code>cam_123456</code></p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
-  <span class="s2">"ok"</span>: <span class="nb">true</span>,
-  <span class="s2">"status"</span>: <span class="o">{</span>
-    <span class="s2">"exportId"</span>: <span class="s2">"exp_123456"</span>,
-    <span class="s2">"teamId"</span>: <span class="s2">"team_123456"</span>,
-    <span class="s2">"campaignId"</span>: <span class="s2">"cam_123456"</span>,
-    <span class="s2">"status"</span>: <span class="s2">"pending"</span>,
-    <span class="s2">"startedAt"</span>: <span class="s2">"2020-01-01T00:00:00.000Z"</span>
-  <span class="o">}</span>
+   <span class="s2">"id"</span>:<span class="s2">"exp_123456"</span>,
+   <span class="s2">"teamId"</span>:<span class="s2">"team_123456"</span>,
+   <span class="s2">"campaignId"</span>:<span class="s2">"cam_123456"</span>,
+   <span class="s2">"campaignName"</span>:<span class="s2">"my new campaign"</span>,
+   <span class="s2">"status"</span>:<span class="s2">"pending"</span>,
+   <span class="s2">"startedAt"</span>:<span class="s2">"2020-01-01T00:00:00.000Z"</span>,
+   <span class="s2">"progressIndex"</span>:0,
+   <span class="s2">"progressTime"</span>:1639138958972,
+   <span class="s2">"progressLastStepDuration"</span>:0,
+   <span class="s2">"progressType"</span>:<span class="s2">"starting"</span>,
+   <span class="s2">"progress"</span>:0,
+   <span class="s2">"total"</span>:0
 <span class="o">}</span>
 </code></pre></div>
 <blockquote>
@@ -661,16 +665,23 @@ Don't forget to add the semicolon (<code>:</code>) before your API key in curl c
 <p>The above command returns the status of a export</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
-  <span class="s2">"ok"</span>: <span class="nb">true</span>,
-  <span class="s2">"status"</span>: <span class="o">{</span>
-    <span class="s2">"exportId"</span>: <span class="s2">"exp_123456"</span>,
-    <span class="s2">"teamId"</span>: <span class="s2">"team_123456"</span>,
-    <span class="s2">"campaignId"</span>: <span class="s2">"cam_123456"</span>,
-    <span class="s2">"status"</span>: <span class="s2">"done"</span>,
-    <span class="s2">"startedAt"</span>: <span class="s2">"2020-01-01T00:00:00.000Z"</span>
-    <span class="s2">"endedAt"</span>: <span class="s2">"2020-01-01T00:00:00.000Z"</span>
-    <span class="s2">"url"</span>: <span class="s2">"https://api.lemlist.com/api/files/exports/fil_exp_my_campaign.csv"</span>
-  <span class="o">}</span>
+   <span class="s2">"ok"</span>:true,
+   <span class="s2">"status"</span>:<span class="o">{</span>
+      <span class="s2">"id"</span>:<span class="s2">"exp_123456"</span>,
+      <span class="s2">"teamId"</span>:<span class="s2">"team_123456"</span>,
+      <span class="s2">"campaignId"</span>:<span class="s2">"cam_123456"</span>,
+      <span class="s2">"campaignName"</span>:<span class="s2">"my new campaign"</span>,
+      <span class="s2">"status"</span>:<span class="s2">"done"</span>,
+      <span class="s2">"startedAt"</span>:<span class="s2">"2020-01-01T00:00:00.000Z"</span>,
+      <span class="s2">"endedAt"</span>:<span class="s2">"2020-01-01T00:00:00.000Z"</span>,
+      <span class="s2">"progressIndex"</span>:6,
+      <span class="s2">"progressTime"</span>:1639138959979,
+      <span class="s2">"progressLastStepDuration"</span>:476,
+      <span class="s2">"progressType"</span>:<span class="s2">"done"</span>,
+      <span class="s2">"progress"</span>:0,
+      <span class="s2">"total"</span>:0,
+      <span class="s2">"url"</span>:<span class="s2">"https://api.lemlist.com/api/files/exports/fil_exp_my_new_campaign.csv"</span>
+   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
 <blockquote>
@@ -715,19 +726,50 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <p>The above command set the email for the export <code>exp_123456</code></p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
-  <span class="s2">"ok"</span>: <span class="nb">true</span>,
-  <span class="s2">"status"</span>: <span class="o">{</span>
-    <span class="s2">"exportId"</span>: <span class="s2">"exp_123"</span>,
-    <span class="s2">"teamId"</span>: <span class="s2">"team_123"</span>,
-    <span class="s2">"campaignId"</span>: <span class="s2">"cam_123"</span>,
-    <span class="s2">"status"</span>: <span class="s2">"pending"</span>,
-    <span class="s2">"startedAt"</span>: <span class="s2">"2020-01-01T00:00:00.000Z"</span>
-    <span class="s2">"email"</span>: <span class="s2">"email@domain.com"</span>
-  <span class="o">}</span>
+   <span class="s2">"ok"</span>:true,
+   <span class="s2">"status"</span>:<span class="o">{</span>
+      <span class="s2">"id"</span>:<span class="s2">"exp_123"</span>,
+      <span class="s2">"teamId"</span>:<span class="s2">"team_123"</span>,
+      <span class="s2">"campaignId"</span>:<span class="s2">"cam_123"</span>,
+      <span class="s2">"campaignName"</span>:<span class="s2">"my new campaign"</span>,
+      <span class="s2">"status"</span>:<span class="s2">"pending"</span>,
+      <span class="s2">"startedAt"</span>:<span class="s2">"2020-01-01T00:00:00.000Z"</span>,
+      <span class="s2">"progressIndex"</span>:6,
+      <span class="s2">"progressTime"</span>:1639139515998,
+      <span class="s2">"progressLastStepDuration"</span>:367,
+      <span class="s2">"progressType"</span>:<span class="s2">"done"</span>,
+      <span class="s2">"progress"</span>:0,
+      <span class="s2">"total"</span>:0,
+      <span class="s2">"email"</span>:<span class="s2">"email@domain.com"</span>
+   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
 <blockquote>
-<p>returned object in case of success</p>
+<p>returned object in case of success, export finished</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+   <span class="s2">"ok"</span>:true,
+   <span class="s2">"status"</span>:<span class="o">{</span>
+      <span class="s2">"id"</span>:<span class="s2">"exp_123"</span>,
+      <span class="s2">"teamId"</span>:<span class="s2">"team_123"</span>,
+      <span class="s2">"campaignId"</span>:<span class="s2">"cam_123"</span>,
+      <span class="s2">"campaignName"</span>:<span class="s2">"my new campaign"</span>,
+      <span class="s2">"status"</span>:<span class="s2">"done"</span>,
+      <span class="s2">"startedAt"</span>:<span class="s2">"2020-01-01T00:00:00.000Z"</span>,
+      <span class="s2">"endedAt"</span>:<span class="s2">"2020-01-01T00:00:00.000Z"</span>,
+      <span class="s2">"progressIndex"</span>:6,
+      <span class="s2">"progressTime"</span>:1639139515998,
+      <span class="s2">"progressLastStepDuration"</span>:367,
+      <span class="s2">"progressType"</span>:<span class="s2">"done"</span>,
+      <span class="s2">"progress"</span>:0,
+      <span class="s2">"total"</span>:0,
+      <span class="s2">"url"</span>:<span class="s2">"https://api.lemlist.com/api/files/exports/fil_exp_my_new_campaign.csv"</span>,
+      <span class="s2">"email"</span>:<span class="s2">"email@domain.com"</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<blockquote>
+<p>returned object in case of success, export in progress</p>
 </blockquote>
 
 <p>This endpoint set an email for a given export. When the export is done an email with the download url will be sent to the address provided.</p>
