@@ -44,7 +44,7 @@ curl https://api.lemlist.com/api/unsubs/export \
 
 This endpoint downloads a CSV file that contains all the unsubscribed email addresses.
 
-You can only retrieve the last 10 000 emails that has been unsubscribed.
+Result is not sorted.
 
 ### HTTP Request
 
