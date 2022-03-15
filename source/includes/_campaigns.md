@@ -336,9 +336,7 @@ failed | Deprecated, use emailsBounced
 ```shell
 curl -X POST https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com \
   -H "Content-Type: application/json" \
-  --data '{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text",\
-  "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg",\
-  "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}' \
+  --data '{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text", "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg", "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}' \
   --user ":YourApiKey"
 ```
 
@@ -381,11 +379,9 @@ email | email address of the lead
 ### Query Parameters
 
 ```shell
-curl POST "https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true" \
+curl -X POST "https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true" \
   -H "Content-Type: application/json" \
-  --data '{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text",\
-  "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg",\
-  "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}' \
+  --data '{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text", "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg", "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}' \
   --user ":YourApiKey"
 ```
 
