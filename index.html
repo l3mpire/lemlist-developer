@@ -917,9 +917,7 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 </tbody></table>
 <h2 id='add-a-lead-in-a-campaign'>Add a Lead in a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-  <span class="nt">--data</span> <span class="s1">'{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text",\
-  "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg",\
-  "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text", "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg", "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}'</span> <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
 <blockquote>
@@ -962,11 +960,9 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <td>email address of the lead</td>
 </tr>
 </tbody></table>
-<h3 id='query-parameters-4'>Query Parameters</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true"</span> <span class="se">\</span>
+<h3 id='query-parameters-4'>Query Parameters</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-  <span class="nt">--data</span> <span class="s1">'{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text",\
-  "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg",\
-  "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text", "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg", "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}'</span> <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
 <blockquote>
