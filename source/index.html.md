@@ -69,6 +69,11 @@ Unsubscribe is the developer term for the graveyard. Where person decide that th
 curl https://api.lemlist.com/api/team \
   --user ":YourApiKey"
 ```
+> Or
+
+```shell
+curl https://api.lemlist.com/api/team?access_token=YourApiKey
+```
 
 > Make sure to replace `YourApiKey` with your API key.
 
@@ -77,6 +82,8 @@ All API routes are using the dedicated sub domain `api.lemlist.com`.
 lemlist uses API keys to allow access to the API. You can get your lemlist API key at our [integration page](https://app.lemlist.com/settings/integrations).
 
 You need to add the `Authorization` header using the `Basic` authentication type. `login:password` where the login is always empty and the password is the API key.
+
+Or pass your API key as a query parameter `access_token`
 
 <aside class="notice">
 Don't forget to add the semicolon (<code>:</code>) before your API key in curl command.
