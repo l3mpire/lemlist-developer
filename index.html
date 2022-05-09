@@ -498,6 +498,11 @@ The response provide any information you may need about it:</p>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
 <blockquote>
+<p>Or</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.lemlist.com/api/team?access_token<span class="o">=</span>YourApiKey
+</code></pre></div>
+<blockquote>
 <p>Make sure to replace <code>YourApiKey</code> with your API key.</p>
 </blockquote>
 
@@ -506,6 +511,8 @@ The response provide any information you may need about it:</p>
 <p>lemlist uses API keys to allow access to the API. You can get your lemlist API key at our <a href="https://app.lemlist.com/settings/integrations">integration page</a>.</p>
 
 <p>You need to add the <code>Authorization</code> header using the <code>Basic</code> authentication type. <code>login:password</code> where the login is always empty and the password is the API key.</p>
+
+<p>Or pass your API key as a query parameter <code>access_token</code></p>
 
 <aside class="notice">
 Don't forget to add the semicolon (<code>:</code>) before your API key in curl command.
