@@ -71,6 +71,16 @@ curl -X POST https://api.lemlist.com/api/unsubscribes/a@a.com \
 }
 ```
 
+> If lead is already unsubscribed, returns JSON structured like this:
+
+```json
+{
+  "_id": "lea_aaJgm566c9tyzTBeu",
+  "email": "a@a.com",
+  "alreadyUnsubscribed": true
+}
+```
+
 This endpoint adds a lead in the unsubscribed list.
 
 ### HTTP Request
