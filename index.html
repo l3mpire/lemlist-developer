@@ -1450,6 +1450,15 @@ All information, including statistics, will be deleted.</p>
   </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.com"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>If lead is already unsubscribed, returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lea_aaJgm566c9tyzTBeu"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"alreadyUnsubscribed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <p>This endpoint adds a lead in the unsubscribed list.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/unsubscribes/:email</code></p>
