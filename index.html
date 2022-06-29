@@ -387,7 +387,13 @@
                     <a href="#mark-as-interested-a-specific-lead-by-email" class="toc-h2 toc-link" data-title="Mark as interested a Specific Lead by Email">Mark as interested a Specific Lead by Email</a>
                   </li>
                   <li>
+                    <a href="#mark-as-not-interested-a-specific-lead-by-email" class="toc-h2 toc-link" data-title="Mark as not interested a Specific Lead by Email">Mark as not interested a Specific Lead by Email</a>
+                  </li>
+                  <li>
                     <a href="#mark-as-interested-a-lead-in-a-specific-campaign" class="toc-h2 toc-link" data-title="Mark as interested a Lead in a Specific Campaign">Mark as interested a Lead in a Specific Campaign</a>
+                  </li>
+                  <li>
+                    <a href="#mark-as-not-interested-a-lead-in-a-specific-campaign" class="toc-h2 toc-link" data-title="Mark as not interested a Lead in a Specific Campaign">Mark as not interested a Lead in a Specific Campaign</a>
                   </li>
               </ul>
           </li>
@@ -1259,13 +1265,45 @@ All information, including statistics, will be deleted.</p>
   </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
+  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isPaused"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaBB11C22Def3Gh4i"</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint marks a specific lead as interested using its email in all campaigns.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/leads/interested/:email</code></p>
 <h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>email address of the lead.</td>
+</tr>
+</tbody></table>
+<h2 id='mark-as-not-interested-a-specific-lead-by-email'>Mark as not interested a Specific Lead by Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/leads/notinterested/:email <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"lea_aaBcDDDDee1ff22Gh"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isPaused"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaBB11C22Def3Gh4i"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint marks a specific lead as not interested using its email in all campaigns.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://api.lemlist.com/api/leads/notinterested/:email</code></p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1287,13 +1325,49 @@ All information, including statistics, will be deleted.</p>
   </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="w">
+  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isPaused"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaBB11C22Def3Gh4i"</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint marks a specific lead as interested using its email in a specific campaigns.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/interested</code></p>
-<h3 id='query-parameters-5'>Query Parameters</h3>
+<h3 id='query-parameters-6'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>The ID of the campaign.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email address of the lead.</td>
+</tr>
+</tbody></table>
+<h2 id='mark-as-not-interested-a-lead-in-a-specific-campaign'>Mark as not interested a Lead in a Specific Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/notinterested <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nl">"_id"</span><span class="p">:</span><span class="s2">"lea_aaNfSAHJoa4gj86Px"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"richard@piedpiper.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"firstName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="s2">"Hendricks"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isPaused"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cam_aaBB11C22Def3Gh4i"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint marks a specific lead as interested using its email in a specific campaigns.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/notinterested</code></p>
+<h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
