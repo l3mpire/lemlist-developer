@@ -105,7 +105,9 @@ curl -X POST https://api.lemlist.com/api/leads/interested/:email \
   "_id":"lea_aaNfSAHJoa4gj86Px",
   "email":"richard@piedpiper.com",
   "firstName":"Richard",
-  "lastName":"Hendricks"
+  "lastName":"Hendricks",
+  "isPaused": false,
+  "campaignId": "cam_aaBB11C22Def3Gh4i"
 }]
 ```
 
@@ -114,6 +116,38 @@ This endpoint marks a specific lead as interested using its email in all campaig
 ### HTTP Request
 
 `POST https://api.lemlist.com/api/leads/interested/:email`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+email | email address of the lead.
+
+## Mark as not interested a Specific Lead by Email
+
+```shell
+curl -X POST https://api.lemlist.com/api/leads/notinterested/:email \
+  --user ":YourApiKey"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[{
+  "_id":"lea_aaBcDDDDee1ff22Gh",
+  "email":"richard@piedpiper.com",
+  "firstName":"Richard",
+  "lastName":"Hendricks",
+  "isPaused": false,
+  "campaignId": "cam_aaBB11C22Def3Gh4i"
+}]
+```
+
+This endpoint marks a specific lead as not interested using its email in all campaigns.
+
+### HTTP Request
+
+`POST https://api.lemlist.com/api/leads/notinterested/:email`
 
 ### Query Parameters
 
@@ -135,7 +169,9 @@ curl -X POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/inte
   "_id":"lea_aaNfSAHJoa4gj86Px",
   "email":"richard@piedpiper.com",
   "firstName":"Richard",
-  "lastName":"Hendricks"
+  "lastName":"Hendricks",
+  "isPaused": false,
+  "campaignId": "cam_aaBB11C22Def3Gh4i"
 }]
 ```
 
@@ -144,6 +180,40 @@ This endpoint marks a specific lead as interested using its email in a specific 
 ### HTTP Request
 
 `POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/interested`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+campaignId | The ID of the campaign.
+email | email address of the lead.
+
+## Mark as not interested a Lead in a Specific Campaign
+
+```shell
+curl -X POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/notinterested \
+  --user ":YourApiKey"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[{
+  "_id":"lea_aaNfSAHJoa4gj86Px",
+  "email":"richard@piedpiper.com",
+  "firstName":"Richard",
+  "lastName":"Hendricks",
+  "isPaused": false,
+  "campaignId": "cam_aaBB11C22Def3Gh4i"
+}]
+```
+
+This endpoint marks a specific lead as interested using its email in a specific campaigns.
+
+
+### HTTP Request
+
+`POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/notinterested`
 
 ### Query Parameters
 
