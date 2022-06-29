@@ -208,7 +208,7 @@ curl -X POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email/noti
 }]
 ```
 
-This endpoint marks a specific lead as interested using its email in a specific campaigns.
+This endpoint marks a specific lead as not interested using its email in a specific campaigns.
 
 
 ### HTTP Request
