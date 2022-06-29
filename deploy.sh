@@ -11,6 +11,7 @@ Options:
   -h, --help               Show this help information.
   -v, --verbose            Increase verbosity. Useful for debugging.
   -e, --allow-empty        Allow deployment of an empty directory.
+  -d, --docker             Use docker to build documentation.
   -m, --message MESSAGE    Specify the message used when committing on the
                            deploy branch.
   -n, --no-hash            Don't append the source commit's hash to the deploy
@@ -37,6 +38,9 @@ parse_args() {
     if [[ $1 = "-h" || $1 = "--help" ]]; then
       echo "$help_message"
       exit 0
+    elif [[ $1 = "-d" || $1 = "--docker" ]]; then
+      use_docker=true
+      shift
     elif [[ $1 = "-v" || $1 = "--verbose" ]]; then
       verbose=true
       shift
@@ -217,10 +221,18 @@ sanitize() {
 parse_args "$@"
 
 if [[ ${source_only} ]]; then
-  run_build
+  if [[ ${use_docker} ]]; then
+    docker run --rm --name slate -v $(pwd)/build:/srv/slate/build -v $(pwd)/source:/srv/slate/source slatedocs/slate
+  else
+    run_build
+  fi
 elif [[ ${push_only} ]]; then
   main "$@"
 else
-  run_build
+  if [[ ${use_docker} ]]; then
+    docker run --rm --name slate -v $(pwd)/build:/srv/slate/build -v $(pwd)/source:/srv/slate/source slatedocs/slate
+  else
+    run_build
+  fi
   main "$@"
 fi
