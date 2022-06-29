@@ -25,6 +25,10 @@ run_build() {
   bundle exec middleman build --clean
 }
 
+run_build_docker() {
+  docker run --rm --name slate -v $(pwd)/build:/srv/slate/build -v $(pwd)/source:/srv/slate/source slatedocs/slate
+}
+
 parse_args() {
   # Set args from a local environment file.
   if [ -e ".env" ]; then
@@ -222,7 +226,7 @@ parse_args "$@"
 
 if [[ ${source_only} ]]; then
   if [[ ${use_docker} ]]; then
-    docker run --rm --name slate -v $(pwd)/build:/srv/slate/build -v $(pwd)/source:/srv/slate/source slatedocs/slate
+    run_build_docker
   else
     run_build
   fi
@@ -230,7 +234,7 @@ elif [[ ${push_only} ]]; then
   main "$@"
 else
   if [[ ${use_docker} ]]; then
-    docker run --rm --name slate -v $(pwd)/build:/srv/slate/build -v $(pwd)/source:/srv/slate/source slatedocs/slate
+    run_build_docker
   else
     run_build
   fi
