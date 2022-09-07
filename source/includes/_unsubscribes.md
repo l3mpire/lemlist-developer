@@ -55,7 +55,7 @@ Result is not sorted.
 No parameters.
 
 
-## Add an Email Address in the Unsubscribes
+## Add an Email Address or a Domain in the Unsubscribes
 
 ```shell
 curl -X POST https://api.lemlist.com/api/unsubscribes/a@a.com \
@@ -81,7 +81,15 @@ curl -X POST https://api.lemlist.com/api/unsubscribes/a@a.com \
 }
 ```
 
+> To unsubscribe the entire domain 'a.com'
+
+```shell
+curl -X POST https://api.lemlist.com/api/unsubscribes/@a.com \
+  --user ":YourApiKey"
+```
+
 This endpoint adds a lead in the unsubscribed list.
+Domain to unsubscribe must start with @, e.g. @a.com
 
 ### HTTP Request
 
@@ -91,7 +99,7 @@ This endpoint adds a lead in the unsubscribed list.
 
 Parameter | Description
 --------- | -----------
-email | email address to unsubscribe.
+email or domain | email address to unsubscribe. If this is a domain, it must start with @
 
 
 ## Delete an Email Address from the Unsubscribes
