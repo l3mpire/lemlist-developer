@@ -415,7 +415,7 @@
                     <a href="#export-the-list-of-unsubscribes" class="toc-h2 toc-link" data-title="Export the List of Unsubscribes">Export the List of Unsubscribes</a>
                   </li>
                   <li>
-                    <a href="#add-an-email-address-in-the-unsubscribes" class="toc-h2 toc-link" data-title="Add an Email Address in the Unsubscribes">Add an Email Address in the Unsubscribes</a>
+                    <a href="#add-an-email-address-or-a-domain-in-the-unsubscribes" class="toc-h2 toc-link" data-title="Add an Email Address or a Domain in the Unsubscribes">Add an Email Address or a Domain in the Unsubscribes</a>
                   </li>
                   <li>
                     <a href="#delete-an-email-address-from-the-unsubscribes" class="toc-h2 toc-link" data-title="Delete an Email Address from the Unsubscribes">Delete an Email Address from the Unsubscribes</a>
@@ -1513,7 +1513,7 @@ All information, including statistics, will be deleted.</p>
 <p><code>GET https://api.lemlist.com/api/unsubs/export</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <p>No parameters.</p>
-<h2 id='add-an-email-address-in-the-unsubscribes'>Add an Email Address in the Unsubscribes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
+<h2 id='add-an-email-address-or-a-domain-in-the-unsubscribes'>Add an Email Address or a Domain in the Unsubscribes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
 <blockquote>
@@ -1533,7 +1533,14 @@ All information, including statistics, will be deleted.</p>
   </span><span class="nl">"alreadyUnsubscribed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint adds a lead in the unsubscribed list.</p>
+<blockquote>
+<p>To unsubscribe the entire domain &#39;a.com&#39;</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/unsubscribes/@a.com <span class="se">\</span>
+  <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
+</code></pre></div>
+<p>This endpoint adds a lead in the unsubscribed list.
+Domain to unsubscribe must start with @, e.g. @a.com</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/unsubscribes/:email</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
@@ -1544,8 +1551,8 @@ All information, including statistics, will be deleted.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>email</td>
-<td>email address to unsubscribe.</td>
+<td>email or domain</td>
+<td>email address to unsubscribe. If this is a domain, it must start with @</td>
 </tr>
 </tbody></table>
 <h2 id='delete-an-email-address-from-the-unsubscribes'>Delete an Email Address from the Unsubscribes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE https://api.lemlist.com/api/unsubscribes/a@a.com <span class="se">\</span>
