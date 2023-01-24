@@ -1615,6 +1615,8 @@ Domain to unsubscribe must start with @, e.g. @a.com</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint adds a hook in our system. Each time an event happen, we&#39;ll call <code>targetUrl</code> with the event data as an object. To know more about the data passed, see <a href="/#get-activities">activities</a></p>
+
+<p>For mails sent through the composer, the <code>emailsSent</code> event is not fired</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/hooks</code></p>
 <h3 id='body-parameters'>Body Parameters</h3>
