@@ -955,6 +955,10 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <p>This endpoint adds a lead in a specific campaign. If the lead doesn&#39;t exist, it&#39;ll be created, then inserted to the campaign. The creator of the lead is the campaign&#39;s sender</p>
 
 <p>You can just add the email without any body.</p>
+
+<p>For campaigns created in v3, if no scanner parameter is passed, the settings from the campaign will be used</p>
+
+<p>For campaigns created in v4, you have to pass the scanner parameter to scan the lead</p>
 <h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
 <h3 id='url-parameters-6'>URL Parameters</h3>
@@ -973,7 +977,7 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <td>email address of the lead</td>
 </tr>
 </tbody></table>
-<h3 id='query-parameters-4'>Query Parameters</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true"</span> <span class="se">\</span>
+<h3 id='query-parameters-4'>Query Parameters</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true&amp;scannerLinkedin=true&amp;scannerDropcontact=true"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text", "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg", "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}'</span> <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
@@ -1006,6 +1010,18 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <tr>
 <td>deduplicate=true</td>
 <td>search email address in another campaign, will not insert the lead if email address already inserted</td>
+</tr>
+<tr>
+<td>scannerLinkedin=true</td>
+<td>activate the linkedin scanner for this import (needs Sales Engagement Plan)</td>
+</tr>
+<tr>
+<td>scannerDropcontact=true</td>
+<td>activate the dropcontact scanner for this import (needs Sales Engagement Plan)</td>
+</tr>
+<tr>
+<td>linkedinScanBy</td>
+<td>Id of the user that will scan the lead. User has to have linkedin connected to his lemlist account</td>
 </tr>
 </tbody></table>
 <h3 id='body-parameters'>Body Parameters</h3>
