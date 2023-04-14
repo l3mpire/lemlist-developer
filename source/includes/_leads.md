@@ -14,7 +14,9 @@ curl https://api.lemlist.com/api/leads/:email \
   "_id":"lea_aaNfSAHJoa4gj86Px",
   "email":"richard@piedpiper.com",
   "firstName":"Richard",
-  "lastName":"Hendricks"
+  "lastName":"Hendricks",
+  "isPaused":true,
+  "campaignId":"cam_aaBB11C22Def3Gh4i"
 }
 ```
 
