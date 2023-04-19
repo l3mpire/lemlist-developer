@@ -190,7 +190,7 @@ exportId | The ID of the export that was returned by the /start endpoint.
 
 
 
-## Set an email for an campaign export
+## Set an email for a campaign export
 
 ```shell
 curl https://api.lemlist.com/api/campaigns/cam_123/export/exp_123/email/email@domain.com \
