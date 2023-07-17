@@ -12,10 +12,14 @@ curl https://api.lemlist.com/api/unsubscribes \
 ```json
 [{
   "_id": "lead_123456",
-  "email": "a@a.com"
+  "email": "a@a.com",
+  "source": "bounce",
+  "createdAt": "2018-04-30T12:19:42.829Z"
 }, {
   "_id": "lead_123457",
-  "email": "b@b.com"
+  "email": "b@b.com",
+  "source": "bounce",
+  "createdAt": "2018-04-30T12:19:42.829Z"
 }]
 ```
 
