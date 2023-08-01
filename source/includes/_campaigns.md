@@ -366,7 +366,7 @@ You can just add the email without any body.
 
 For campaigns created in v3, if no scanner parameter is passed, the settings from the campaign will be used
 
-For campaigns created in v4, you have to pass the scanner parameter to scan the lead
+For campaigns created in v4, you have to pass the scanner parameter to scan the lead. Only one parameter at a time between smartEnrichment, scannerLinkedin and verifyEmail is used. If multiple ones are set to true, the order is smart enrichment then linkedin scanner then verify email
 
 ### HTTP Request
 
@@ -383,7 +383,7 @@ email | email address of the lead
 ### Query Parameters
 
 ```shell
-curl -X POST "https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true&scannerLinkedin=true&scannerDropcontact=true" \
+curl -X POST "https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true&scannerLinkedin=true" \
   -H "Content-Type: application/json" \
   --data '{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text", "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg", "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}' \
   --user ":YourApiKey"
@@ -412,8 +412,9 @@ curl -X POST "https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/
 Parameter | Description
 --------- | -----------
 deduplicate=true | search email address in another campaign, will not insert the lead if email address already inserted  
+smartEnrichment=true | activate the smart enrichment scanner for this import (needs Sales Engagement Plan)
 scannerLinkedin=true | activate the linkedin scanner for this import (needs Sales Engagement Plan)
-scannerDropcontact=true | activate the dropcontact scanner for this import (needs Sales Engagement Plan)
+verifyEmail=true | debounce the email for this import (needs Sales Engagement Plan)
 linkedinScanBy | Id of the user that will scan the lead. User has to have linkedin connected to his lemlist account
 
 
