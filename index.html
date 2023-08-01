@@ -958,7 +958,7 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 
 <p>For campaigns created in v3, if no scanner parameter is passed, the settings from the campaign will be used</p>
 
-<p>For campaigns created in v4, you have to pass the scanner parameter to scan the lead</p>
+<p>For campaigns created in v4, you have to pass the scanner parameter to scan the lead. Only one parameter at a time between smartEnrichment, scannerLinkedin and verifyEmail is used. If multiple ones are set to true, the order is smart enrichment then linkedin scanner then verify email</p>
 <h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
 <h3 id='url-parameters-6'>URL Parameters</h3>
@@ -977,7 +977,7 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <td>email address of the lead</td>
 </tr>
 </tbody></table>
-<h3 id='query-parameters-4'>Query Parameters</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true&amp;scannerLinkedin=true&amp;scannerDropcontact=true"</span> <span class="se">\</span>
+<h3 id='query-parameters-4'>Query Parameters</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true&amp;scannerLinkedin=true"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{"firstName":"Richard","lastName":"Hendricks","companyName":"Piedpiper","icebreaker":"Icebreaker text", "phone":"(555) 555-1234","picture":"https://piedpiper.com/richard-hendricks.jpg", "linkedinUrl":"https://www.linkedin.com/in/richard-hendricks/"}'</span> <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
@@ -1012,12 +1012,16 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <td>search email address in another campaign, will not insert the lead if email address already inserted</td>
 </tr>
 <tr>
+<td>smartEnrichment=true</td>
+<td>activate the smart enrichment scanner for this import (needs Sales Engagement Plan)</td>
+</tr>
+<tr>
 <td>scannerLinkedin=true</td>
 <td>activate the linkedin scanner for this import (needs Sales Engagement Plan)</td>
 </tr>
 <tr>
-<td>scannerDropcontact=true</td>
-<td>activate the dropcontact scanner for this import (needs Sales Engagement Plan)</td>
+<td>verifyEmail=true</td>
+<td>debounce the email for this import (needs Sales Engagement Plan)</td>
 </tr>
 <tr>
 <td>linkedinScanBy</td>
