@@ -2,7 +2,7 @@
 title: lemlist Developer Documentation
 
 toc_footers:
-  - <a href='https://lemlist.com'>lemlist Homepage</a>
+  - <a href='https://www.lemlist.com'>lemlist Homepage</a>
   - <a href='https://help.lemlist.com'>lemlist Faq</a>
   - <a href='https://github.com/l3mpire/lemlist-developer/blob/master/source/index.html.md'>Report an issue in this doc</a>
 
