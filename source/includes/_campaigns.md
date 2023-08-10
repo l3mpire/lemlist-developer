@@ -364,6 +364,8 @@ This endpoint adds a lead in a specific campaign. If the lead doesn't exist, it'
 
 You can just add the email without any body.
 
+The email is also optional.
+
 For campaigns created in v3, if no scanner parameter is passed, the settings from the campaign will be used
 
 For campaigns created in v4, you have to pass the scanner parameter to scan the lead. Only one parameter at a time between smartEnrichment, scannerLinkedin and verifyEmail is used. If multiple ones are set to true, the order is smart enrichment then linkedin scanner then verify email
@@ -377,7 +379,7 @@ For campaigns created in v4, you have to pass the scanner parameter to scan the 
 Parameter | Description
 --------- | -----------
 campaignId | The ID of the campaign to add the lead.
-email | email address of the lead
+email | email address of the lead (optional)
 
 
 ### Query Parameters
