@@ -441,7 +441,7 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='https://lemlist.com'>lemlist Homepage</a></li>
+            <li><a href='https://www.lemlist.com'>lemlist Homepage</a></li>
             <li><a href='https://help.lemlist.com'>lemlist Faq</a></li>
             <li><a href='https://github.com/l3mpire/lemlist-developer/blob/master/source/index.html.md'>Report an issue in this doc</a></li>
         </ul>
@@ -956,6 +956,8 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 
 <p>You can just add the email without any body.</p>
 
+<p>The email is also optional.</p>
+
 <p>For campaigns created in v3, if no scanner parameter is passed, the settings from the campaign will be used</p>
 
 <p>For campaigns created in v4, you have to pass the scanner parameter to scan the lead. Only one parameter at a time between smartEnrichment, scannerLinkedin and verifyEmail is used. If multiple ones are set to true, the order is smart enrichment then linkedin scanner then verify email</p>
@@ -974,7 +976,7 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 </tr>
 <tr>
 <td>email</td>
-<td>email address of the lead</td>
+<td>email address of the lead (optional)</td>
 </tr>
 </tbody></table>
 <h3 id='query-parameters-4'>Query Parameters</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com?deduplicate=true&amp;scannerLinkedin=true"</span> <span class="se">\</span>
