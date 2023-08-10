@@ -418,7 +418,6 @@ smartEnrichment=true | activate the smart enrichment scanner for this import (ne
 scannerLinkedin=true | activate the linkedin scanner for this import (needs Sales Engagement Plan)
 verifyEmail=true | debounce the email for this import (needs Sales Engagement Plan)
 linkedinScanBy | Id of the user that will scan the lead. User has to have linkedin connected to his lemlist account
-companyDomain | Domain of the company of the lead
 
 
 ### Body Parameters
@@ -436,6 +435,8 @@ icebreaker | Icebreaker text of the lead.
 phone | Phone number of the lead.
 picture | Picture url of the lead.
 linkedinUrl | Linkedin url of the lead.
+companyDomain | Domain of the company of the lead
+
 ## Update a Lead in a Campaign
 ```shell
 curl -X PATCH https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com \
