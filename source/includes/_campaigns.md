@@ -415,9 +415,7 @@ Parameter | Description
 --------- | -----------
 deduplicate=true | search email address in another campaign, will not insert the lead if email address already inserted  
 smartEnrichment=true | activate the smart enrichment scanner for this import (needs Sales Engagement Plan)
-scannerLinkedin=true | activate the linkedin scanner for this import (needs Sales Engagement Plan)
 verifyEmail=true | debounce the email for this import (needs Sales Engagement Plan)
-linkedinScanBy | Id of the user that will scan the lead. User has to have linkedin connected to his lemlist account
 
 
 ### Body Parameters
