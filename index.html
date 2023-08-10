@@ -1029,10 +1029,6 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <td>linkedinScanBy</td>
 <td>Id of the user that will scan the lead. User has to have linkedin connected to his lemlist account</td>
 </tr>
-<tr>
-<td>companyDomain</td>
-<td>Domain of the company of the lead</td>
-</tr>
 </tbody></table>
 <h3 id='body-parameters'>Body Parameters</h3>
 <p>Body is optional. If set, it must be a JSON object with any information you want to add to the lead.</p>
@@ -1072,6 +1068,10 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <tr>
 <td>linkedinUrl</td>
 <td>Linkedin url of the lead.</td>
+</tr>
+<tr>
+<td>companyDomain</td>
+<td>Domain of the company of the lead</td>
 </tr>
 </tbody></table>
 <h2 id='update-a-lead-in-a-campaign'>Update a Lead in a Campaign</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PATCH https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/richard@piedpiper.com <span class="se">\</span>
