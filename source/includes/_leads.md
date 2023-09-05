@@ -1,9 +1,27 @@
 # Leads
 
-## Get a Specific Lead by Email
+## Get a Specific Lead by Email or Id
 
 ```shell
 curl https://api.lemlist.com/api/leads/:email \
+  --user ":YourApiKey"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "_id":"lea_aaNfSAHJoa4gj86Px",
+  "email":"richard@piedpiper.com",
+  "firstName":"Richard",
+  "lastName":"Hendricks",
+  "isPaused":true,
+  "campaignId":"cam_aaBB11C22Def3Gh4i"
+}
+```
+
+```shell
+curl https://api.lemlist.com/api/leads?id=lea_aaNfSAHJoa4gj86Px \
   --user ":YourApiKey"
 ```
 
@@ -32,6 +50,7 @@ Parameter | Description
 --------- | -----------
 email | email address of the lead.
 campaignId | (Optional) Search for this lead only the specified campaign 
+id | (Optional) If no email parameter, get lead by its id
 
 ## Pause a Specific Lead by Email
 
