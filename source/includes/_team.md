@@ -11,17 +11,24 @@ curl https://api.lemlist.com/api/team \
 
 ```json
 {
-  "_id": "tea_aaqam5a3BkY8aje24",
-  "name": "PiedPiper",
-  "userIds": ["usr_aawMB5Gd5JJCFYvjp"],
-  "createdBy": "usr_aawMB5Gd5JJCFYvjp",
-  "createdAt": "2018-04-30T12:19:42.829Z",
-  "apiKey": "aa13722b45b9c475cc686231b1af6583",
-  "billing": {
-    "quantity": 1,
-    "ok": true,
-    "plan": "freetrial"
-  },
+  "_id": "tea_ZSC4DkNwPGMe7rMJi",
+  "name": "My team",
+  "userIds": [
+    "usr_WhvZ6kTGMcDkg7iH9",
+    "usr_5AJZjmsDGTwvjvbt7"
+  ],
+  "createdBy": "usr_WhvZ6kTGMcDkg7iH9",
+  "createdAt": "2023-02-07T15:13:40.668Z",
+  "beta": [],
+  "invitedUsers": [
+    {
+      "email": "new.user@my-domain.com",
+      "role": "member",
+      "invitedBy": "usr_WhvZ6kTGMcDkg7iH9",
+      "invitedAt": "2023-02-17T10:36:42.279Z"
+    }
+  ],
+  "customDomain": "my-domain.com"
 }
 ```
 
