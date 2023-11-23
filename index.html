@@ -965,9 +965,8 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 
 <p>The email is also optional.</p>
 
-<p>For campaigns created in v3, if no scanner parameter is passed, the settings from the campaign will be used</p>
-
-<p>For campaigns created in v4, you have to pass the scanner parameter to scan the lead. Only one parameter at a time between smartEnrichment, scannerLinkedin and verifyEmail is used. If multiple ones are set to true, the order is smart enrichment then linkedin scanner then verify email</p>
+<p>To verify a lead&#39;s existing email, use verifyEmail parameter. To enrich lead&#39;s data, use linkedinEnrichment parameter. And to find the lead&#39;s email, use findEmail parameter.
+The three parameters can be combined</p>
 <h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST https://api.lemlist.com/api/campaigns/:campaignId/leads/:email</code></p>
 <h3 id='url-parameters-6'>URL Parameters</h3>
@@ -1021,16 +1020,16 @@ When you obtain the CSV file URL, you have to download the file in a 24 hours ti
 <td>search email address in another campaign, will not insert the lead if email address already inserted</td>
 </tr>
 <tr>
-<td>smartEnrichment=true</td>
-<td>run the smart enrichment for this import (needs Sales Engagement Plan)</td>
+<td>findEmail=true</td>
+<td>find verified email</td>
 </tr>
 <tr>
-<td>scannerLinkedin=true</td>
-<td>run the LinkedIn enrichment for this import  (needs Sales Engagement Plan)</td>
+<td>linkedinEnrichment=true</td>
+<td>run the LinkedIn enrichment</td>
 </tr>
 <tr>
 <td>verifyEmail=true</td>
-<td>verify the email for this import (debounce) (needs Sales Engagement Plan)</td>
+<td>verify existing email (debounce)</td>
 </tr>
 </tbody></table>
 <h3 id='body-parameters'>Body Parameters</h3>
