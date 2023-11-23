@@ -414,9 +414,9 @@ curl -X POST "https://api.lemlist.com/api/campaigns/cam_aa7uvyxECcni5KXBM/leads/
 Parameter | Description
 --------- | -----------
 deduplicate=true | search email address in another campaign, will not insert the lead if email address already inserted  
-smartEnrichment=true | run the smart enrichment for this import (needs Sales Engagement Plan)
-scannerLinkedin=true | run the LinkedIn enrichment for this import  (needs Sales Engagement Plan)
-verifyEmail=true | verify the email for this import (debounce) (needs Sales Engagement Plan)
+findEmail=true | find verified email
+linkedinEnrichment=true | run the LinkedIn enrichment 
+verifyEmail=true | verify existing email (debounce)
 
 
 ### Body Parameters
