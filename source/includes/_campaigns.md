@@ -366,9 +366,8 @@ You can just add the email without any body.
 
 The email is also optional.
 
-For campaigns created in v3, if no scanner parameter is passed, the settings from the campaign will be used
-
-For campaigns created in v4, you have to pass the scanner parameter to scan the lead. Only one parameter at a time between smartEnrichment, scannerLinkedin and verifyEmail is used. If multiple ones are set to true, the order is smart enrichment then linkedin scanner then verify email
+To verify a lead's existing email, use verifyEmail parameter. To enrich lead's data, use linkedinEnrichment parameter. And to find the lead's email, use findEmail parameter.
+The three parameters can be combined
 
 ### HTTP Request
 
