@@ -55,7 +55,7 @@ id | (Optional) If no email parameter, get lead by its id
 ## Pause a Specific Lead by Email
 
 ```shell
-curl -X POST https://api.lemlist.com/api/leads/pause/:email \
+curl -X POST https://api.lemlist.com/api/leads/pause/:email?campaignId=cam_aaNfSAHJoa4gj86Px \
   --user ":YourApiKey"
 ```
 
@@ -74,18 +74,24 @@ This endpoint pauses a specific lead using its email in all campaigns.
 
 ### HTTP Request
 
-`POST https://api.lemlist.com/api/leads/pause/:email`
+`POST https://api.lemlist.com/api/leads/pause/:email?campaignId=cam_aaNfSAHJoa4gj86Px`
 
-### Query Parameters
+### URL Parameters
 
 Parameter | Description
 --------- | -----------
 email | email address of the lead.
 
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+campaignId | id of the campaign (optional)
+
 ## Resume a Specific Lead by Email
 
 ```shell
-curl -X POST https://api.lemlist.com/api/leads/start/:email \
+curl -X POST https://api.lemlist.com/api/leads/start/:email?campaignId=cam_aaNfSAHJoa4gj86Px \
   --user ":YourApiKey"
 ```
 
@@ -104,13 +110,19 @@ This endpoint starts a specific lead using its email in all campaigns.
 
 ### HTTP Request
 
-`POST https://api.lemlist.com/api/leads/start/:email`
+`POST https://api.lemlist.com/api/leads/start/:email?campaignId=cam_aaNfSAHJoa4gj86Px`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+email | email address of the lead.
 
 ### Query Parameters
 
 Parameter | Description
 --------- | -----------
-email | email address of the lead.
+campaignId | id of the campaign (optional)
 
 ## Mark as interested a Specific Lead by Email
 
