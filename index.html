@@ -1247,7 +1247,7 @@ All information, including statistics, will be deleted.</p>
 <td>(Optional) If no email parameter, get lead by its id</td>
 </tr>
 </tbody></table>
-<h2 id='pause-a-specific-lead-by-email'>Pause a Specific Lead by Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/leads/pause/:email <span class="se">\</span>
+<h2 id='pause-a-specific-lead-by-email'>Pause a Specific Lead by Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/leads/pause/:email?campaignId<span class="o">=</span>cam_aaNfSAHJoa4gj86Px <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
 <blockquote>
@@ -1262,8 +1262,8 @@ All information, including statistics, will be deleted.</p>
 </span></code></pre></div>
 <p>This endpoint pauses a specific lead using its email in all campaigns.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST https://api.lemlist.com/api/leads/pause/:email</code></p>
-<h3 id='query-parameters-2'>Query Parameters</h3>
+<p><code>POST https://api.lemlist.com/api/leads/pause/:email?campaignId=cam_aaNfSAHJoa4gj86Px</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1275,7 +1275,19 @@ All information, including statistics, will be deleted.</p>
 <td>email address of the lead.</td>
 </tr>
 </tbody></table>
-<h2 id='resume-a-specific-lead-by-email'>Resume a Specific Lead by Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/leads/start/:email <span class="se">\</span>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>id of the campaign (optional)</td>
+</tr>
+</tbody></table>
+<h2 id='resume-a-specific-lead-by-email'>Resume a Specific Lead by Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/leads/start/:email?campaignId<span class="o">=</span>cam_aaNfSAHJoa4gj86Px <span class="se">\</span>
   <span class="nt">--user</span> <span class="s2">":YourApiKey"</span>
 </code></pre></div>
 <blockquote>
@@ -1290,8 +1302,8 @@ All information, including statistics, will be deleted.</p>
 </span></code></pre></div>
 <p>This endpoint starts a specific lead using its email in all campaigns.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST https://api.lemlist.com/api/leads/start/:email</code></p>
-<h3 id='query-parameters-3'>Query Parameters</h3>
+<p><code>POST https://api.lemlist.com/api/leads/start/:email?campaignId=cam_aaNfSAHJoa4gj86Px</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1301,6 +1313,18 @@ All information, including statistics, will be deleted.</p>
 <tr>
 <td>email</td>
 <td>email address of the lead.</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>id of the campaign (optional)</td>
 </tr>
 </tbody></table>
 <h2 id='mark-as-interested-a-specific-lead-by-email'>Mark as interested a Specific Lead by Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.lemlist.com/api/leads/interested/:email <span class="se">\</span>
