@@ -297,7 +297,25 @@ curl https://api.lemlist.com/api/campaigns/cam_123456/export/leads?state=all \
 
 > The above command returns the CSV file for the campaign `cam_123456`
 
-This endpoint downloads a CSV file that contains all the leads of a campaign.
+> In this CSV, you will find the following columns:
+
+>  - emailStatus
+>  - the list of variables of your leads with their content
+>  - lastState: the last specific state the lead was in (e.g., emailSent, linkedinReplied, etc.)
+>  - status: the system status of the lead's state.
+
+
+> The possible statuses are:
+>
+>  - 'notInterested': Corresponds to the 'Not interested' status in the application
+>  - 'interested': Corresponds to the 'Interested' status in the application
+>  - 'unsubscribed': Corresponds to the 'Unsubscribed' status in the application
+>  - 'review': Corresponds to the 'To launch' status in the application
+>  - 'scanning': Corresponds to the 'Enriching' status in the application
+>  - 'paused': Corresponds to the 'Paused' status in the application
+>  - 'running': Corresponds to the 'In progress' status in the application
+>  - 'done': Corresponds to the 'Completed' status in the application
+
 
 ### HTTP Request
 
@@ -313,7 +331,20 @@ campaignId | The ID of the campaign to retrieve.
 
 Parameter | Description
 --------- | -----------
-state=all | Filter to export only the specified states, all will export all states. Possible states are imported, scanned, skipped, reviewed, contacted, hooked, attracted, warmed, notInterested, interested, emailsBounced, failed, emailsUnsubscribed
+state=all | Filter to export only the specified lead's last states; 'all' will export all states.
+
+The state parameter can accept a list of values, divided into two categories:
+
+- Global states that group multiple lead states into a single category.
+- Detailed states that allow for retrieving leads with more specific states.
+
+E.g.:
+
+- To retrieve only leads who’s last action is to have open an email used `state=emailsOpened`. 
+- To retrieve all leads who’s last action is to have open an email or a linkedin message use `state=hooked`
+
+
+#### Global states
 
 State | Description
 ----- | -----------
@@ -325,11 +356,46 @@ contacted | All the leads that were contacted (a step was done for this lead, wi
 hooked | All the leads that opened an email or linkedIn
 attracted | All the leads that clicked in an email, accepted a linkedIn invite 
 warmed | All the leads that replied to an email, or a linkedIn
-notInterested | All the leads that were mark as notInterested
 interested | All the leads that were mark as interested
-emailsBounced | All the leads where at least one step bounced, either an email or a linkedIn or an api call
+notInterested | All the leads that were mark as notInterested
+emailsBounced | All the leads where at least one step bounced or failed, either an email or a linkedIn or an api call
 emailsUnsubscribed | All the leads that were an unsubscribe
 failed | Deprecated, use emailsBounced
+meetingBooked | All the leads that booked a meeting
+paused | All the leads that were paused
+
+
+#### Detailed states 
+
+State | Description
+----- | -----------
+emailsSent | An Email was sent to this lead
+emailsOpened | This lead opened an email
+emailsClicked | This lead clicked on an email
+emailsReplied | This lead replied to an email
+emailsInterested | This lead was a success
+emailsNotInterested | This lead was not a success
+emailsFailed | An error occurred when sending an email to this lead
+opportunitiesDone | Sparkle done for this lead
+aircallDone | Call done for this lead
+aircallInterested | This lead was a success
+aircallNotInterested | This lead was not a success
+apiDone | API called for this lead
+apiInterested | This lead was a success
+apiNotInterested | This lead was not a success
+linkedinVisitDone | This lead LinkedIn profile have been visited
+linkedinVisitFailed | An error occurred when visiting lead linkedin profile
+linkedinInviteDone | An invitation was sent to this lead
+linkedinInviteAccepted | An invitation has been accepted by this lead
+linkedinInviteFailed | An error occurred when sending an invite to this lead
+linkedinSent | A linkedin message was sent to this lead
+linkedinOpened | A linkedin message was opened by this lead
+linkedinReplied | This lead replied from linkedin
+linkedinInterested | This lead was a success
+linkedinNotInterested | This lead was not a success
+linkedinSendFailed | An error occurred when sending a linkedin message to this lead
+manualInterested | This lead was a success
+manualNotInterested | This lead was not a success
 
 ## Add a Lead in a Campaign
 
